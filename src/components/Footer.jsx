@@ -18,10 +18,13 @@ export function Footer({ onNavigate }) {
             Školski izleti, ekskurzije i škole u prirodi po Hrvatskoj i Europi.
           </p>
           <p className="mt-4 text-sm">
-            <span className="block font-semibold text-white">{OWNER.name}</span>
-            OIB {OWNER.oib} · MBS {OWNER.mbs}
+            <span className="block font-semibold text-white">{OWNER.fullName}</span>
+            {OWNER.address.join(', ')}
+            <span className="block">OIB {OWNER.oib} · MBS {OWNER.mbs}, {OWNER.court}</span>
             <span className="block">ID kod agencije: {LICENSE.idCode}</span>
-            <span className="block">IBAN {OWNER.iban}</span>
+            <span className="block">Uprava: {OWNER.board}</span>
+            <span className="block">Temeljni kapital {OWNER.capital}</span>
+            <span className="block">IBAN {OWNER.iban}, {OWNER.bank} (SWIFT {OWNER.swift})</span>
           </p>
         </div>
 

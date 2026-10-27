@@ -3,7 +3,7 @@ import { CONTACT, LICENSE, OWNER } from '../data/company.js';
 import { SectionHeader } from './ui/Section.jsx';
 
 const BADGES = [
-  { icon: BadgeCheck, title: 'Licencirana agencija', text: `Upisani smo u Središnji informacijski sustav turističkih agencija. ID kod: ${LICENSE.idCode}.` },
+  { icon: BadgeCheck, title: 'Licencirana agencija', text: `Upisani smo u Upisnik turističkih agencija. Identifikacijska oznaka (ID kod): ${LICENSE.idCode}.` },
   { icon: Umbrella, title: 'Osiguranje putnika', text: 'Putno zdravstveno osiguranje i osiguranje od nesretnog slučaja uključeni su u svaki program.' },
   { icon: ShieldCheck, title: 'Jamčevina', text: 'Uplate su zaštićene jamstvom za slučaj nesolventnosti, u skladu sa Zakonom o pružanju usluga u turizmu.' },
   { icon: PhoneCall, title: 'Koordinator 0–24 h', text: `Tijekom putovanja nastavnici imaju izravan broj dežurnog koordinatora: ${CONTACT.coordinator}.` },
@@ -24,7 +24,9 @@ export function TrustSection() {
               <p className="text-sm text-brand-100">Vlasnik i organizator putovanja</p>
               <p className="mt-0.5 font-display text-xl font-bold">{OWNER.name}</p>
               <p className="mt-1 text-sm text-brand-100">
-                {OWNER.address.join(', ')} · OIB {OWNER.oib} · MBS {OWNER.mbs}
+                {OWNER.address.join(', ')} · OIB {OWNER.oib} · MBS {OWNER.mbs}, {OWNER.court}
+              </p>
+              <p className="mt-1 text-sm text-brand-100">ID kod {LICENSE.idCode} · Uprava: {OWNER.board}
               </p>
             </div>
           </div>
@@ -44,7 +46,7 @@ export function TrustSection() {
 
         <p className="mt-8 flex items-start gap-2 text-sm text-brand-200">
           <HeartHandshake className="mt-0.5 h-4 w-4 shrink-0" />
-          {LICENSE.decision} · {LICENSE.guarantee} · {LICENSE.liability}
+          Nadzor: {LICENSE.supervision} · {LICENSE.decision} · {LICENSE.guarantee} · {LICENSE.liability}
         </p>
       </div>
     </section>

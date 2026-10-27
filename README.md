@@ -25,5 +25,5 @@ Obrasci se zasad provjeravaju i „šalju“ samo na klijentu (`fakeSend` u `src
 
 ## Prije objave upisati
 
-ID kod agencije (HR-AB), rješenje o upisu, jamstvo i policu osiguranja, radno vrijeme, adrese društvenih mreža,
+Rješenje o upisu u Upisnik turističkih agencija (klasa, datum), PDV status, jamstvo i policu osiguranja, radno vrijeme, adrese društvenih mreža,
 Opće uvjete i Zaštitu podataka, fotografije programa te potvrditi programe i rokove iz Pravilnika.

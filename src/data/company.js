@@ -6,10 +6,17 @@ export const BRAND = {
 
 export const OWNER = {
   name: 'TERRA POMALO d.o.o.',
+  fullName: 'TERRA POMALO d.o.o. za usluge, turistička agencija',
   oib: '52072209280',
   mbs: '110168155',
+  court: 'Trgovački sud u Šibeniku',
   address: ['Nova ulica 17, Žaborić', '22000 Šibenik'],
-  iban: 'HR8323600001103316549',
+  board: 'Snježana Cenić Stojaković, direktorica · Marko Obranović, direktor',
+  capital: '3.000,00 EUR, uplaćen u cijelosti',
+  bank: 'Zagrebačka banka d.d.',
+  iban: 'HR83 2360 0001 1033 1654 9',
+  swift: 'ZABAHR2X',
+  vat: '[PDV ID HR52072209280 – ako je društvo u sustavu PDV-a]',
 };
 
 export const CONTACT = {
@@ -24,9 +31,10 @@ export const CONTACT = {
 };
 
 export const LICENSE = {
-  idCode: '[HR-AB-XX-XXXXXXXXX]',
-  decision: '[Rješenje o upisu u Središnji informacijski sustav – klasa, datum]',
-  guarantee: '[Jamstvo za slučaj nesolventnosti – osiguravatelj, broj police]',
+  idCode: 'HR-AB-15-110168155',
+  decision: '[Upis u Upisnik turističkih agencija – nadležni ured, klasa i datum rješenja]',
+  supervision: 'Državni inspektorat Republike Hrvatske',
+  guarantee: '[Jamstvo za slučaj nesolventnosti – osiguravatelj ili banka, broj police ili jamstva]',
   liability: '[Polica osiguranja od odgovornosti – osiguravatelj, broj police]',
 };
 
