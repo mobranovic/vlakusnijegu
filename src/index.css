@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-ice-50 font-sans text-slate-800 antialiased;
+    overflow-x: hidden;
+  }
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.75);
+  animation: snow linear infinite;
+}
+@keyframes snow {
+  to {
+    transform: translate3d(30px, 110vh, 0);
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  @page {
+    margin: 16mm;
+  }
+  .no-print,
+  #root {
+    display: none !important;
+  }
+  .print-only {
+    display: block;
+    font-family: Inter, Arial, sans-serif;
+    color: #081f3d;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+}
