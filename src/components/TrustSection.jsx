@@ -15,7 +15,7 @@ export function TrustSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
           <SectionHeader eyebrow="O nama" title="Sigurnost na prvom mjestu" dark>
-            Vlak u snijegu je agencija specijalizirana za školska putovanja. Planiramo ih kao roditelji i nastavnici:
+            Veliki odmor je agencija specijalizirana za školska putovanja. Planiramo ih kao roditelji i nastavnici:
             provjereni prijevoznici, smještaj prilagođen djeci i stalna dostupnost tijekom puta.
           </SectionHeader>
           <div className="flex items-start gap-4 rounded-2xl bg-white/10 p-5 ring-1 ring-white/15">

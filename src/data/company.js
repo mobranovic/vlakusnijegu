@@ -1,7 +1,7 @@
 // Podaci o agenciji i vlasniku. Sve u [uglatim zagradama] čeka potvrdu i mora se upisati prije objave.
 export const BRAND = {
-  name: 'Vlak u snijegu',
-  tagline: 'Turistička agencija za školske izlete',
+  name: 'Veliki odmor',
+  tagline: 'Školski izleti i ekskurzije',
 };
 
 export const OWNER = {

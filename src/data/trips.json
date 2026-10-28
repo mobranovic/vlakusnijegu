@@ -191,7 +191,7 @@
     "days": 1,
     "nights": 0,
     "ages": ["razredna", "predmetna", "srednja"],
-    "image": { "icon": "mountain-snow", "from": "#0C2D56", "to": "#7FA9D9" },
+    "image": { "icon": "castle", "from": "#0C2D56", "to": "#7FA9D9" },
     "highlights": ["Dvorac Trakošćan", "Stari grad Varaždin", "Entomološki odjel", "Barokna jezgra"],
     "summary": "Barokni Varaždin i bajkoviti Trakošćan iznad jezera – jednodnevni izlet za sve uzraste uz prilagodbu programa dobi učenika.",
     "subjects": ["Povijest", "Biologija", "Priroda i društvo"],

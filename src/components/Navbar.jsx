@@ -32,7 +32,7 @@ export function Navbar({ onNavigate, onRequestOffer }) {
   return (
     <header className={`sticky top-0 z-40 bg-white/90 backdrop-blur transition-shadow no-print ${scrolled ? 'shadow-card' : ''}`}>
       <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8" aria-label="Glavna navigacija">
-        <a href="#pocetna" onClick={go(NAV[0])} aria-label="Vlak u snijegu – početna">
+        <a href="#pocetna" onClick={go(NAV[0])} aria-label="Veliki odmor – početna">
           <Logo />
         </a>
 

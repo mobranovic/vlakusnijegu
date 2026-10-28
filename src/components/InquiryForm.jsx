@@ -43,7 +43,7 @@ export function InquiryForm({ trip, trips }) {
       noValidate
       onSubmit={submit(async () => {
         await fakeSend();
-        setRef(refNumber('VUS'));
+        setRef(refNumber('VO'));
       })}
       className="grid gap-4 sm:grid-cols-2"
     >
@@ -67,7 +67,7 @@ export function InquiryForm({ trip, trips }) {
       <Field label="Napomena" as="textarea" placeholder="Posebni zahtjevi, prehrana, učenici s teškoćama…" className="sm:col-span-2" {...field('note')} />
       <div className="sm:col-span-2">
         <Checkbox
-          label="Pristajem da agencija Vlak u snijegu (TERRA POMALO d.o.o.) obradi navedene podatke radi pripreme ponude."
+          label="Pristajem da Veliki odmor (TERRA POMALO d.o.o.) obradi navedene podatke radi pripreme ponude."
           {...field('consent')}
         />
       </div>

@@ -17,7 +17,7 @@ export default {
           800: '#0C2D56',
           900: '#081F3D',
         },
-        // Snijeg i led – pozadine i naglasci
+        // Svijetla ledeno plava – pozadine i naglasci
         ice: {
           50: '#F7FBFE',
           100: '#EAF4FB',

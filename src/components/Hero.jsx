@@ -52,7 +52,6 @@ export function Hero({ onSearch }) {
   return (
     <section id="pocetna" className="relative overflow-hidden bg-brand-800 text-white scroll-mt-20">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(127,169,217,.45),transparent_60%)]" aria-hidden />
-      <Snowfall />
       <svg className="absolute inset-x-0 bottom-0 w-full text-ice-100" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden>
         <path d="M0 160 L0 110 L180 40 L320 100 L520 20 L700 95 L880 35 L1060 105 L1240 45 L1440 100 L1440 160 Z" fill="currentColor" opacity=".35" />
         <path d="M0 160 L0 130 L240 80 L460 135 L720 70 L980 130 L1200 85 L1440 125 L1440 160 Z" fill="currentColor" />
@@ -81,26 +80,5 @@ export function Hero({ onSearch }) {
         </div>
       </div>
     </section>
-  );
-}
-
-function Snowfall() {
-  const flakes = Array.from({ length: 28 }, (_, i) => i);
-  return (
-    <div className="pointer-events-none absolute inset-0 motion-reduce:hidden" aria-hidden>
-      {flakes.map((i) => (
-        <span
-          key={i}
-          className="snowflake"
-          style={{
-            left: `${(i * 37) % 100}%`,
-            animationDuration: `${8 + (i % 7)}s`,
-            animationDelay: `${-(i * 0.9)}s`,
-            width: `${3 + (i % 3)}px`,
-            height: `${3 + (i % 3)}px`,
-          }}
-        />
-      ))}
-    </div>
   );
 }

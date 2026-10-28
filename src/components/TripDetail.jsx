@@ -71,7 +71,7 @@ function PrintProgram({ trip }) {
   return createPortal(
     <div id="print-root" className="print-only">
       <header style={{ borderBottom: '2px solid #103A6E', paddingBottom: 8, marginBottom: 16 }}>
-        <strong style={{ fontSize: 18 }}>Vlak u snijegu – turistička agencija za školske izlete</strong>
+        <strong style={{ fontSize: 18 }}>Veliki odmor – školski izleti i ekskurzije</strong>
         <div style={{ fontSize: 11 }}>
           {OWNER.name}, {OWNER.address.join(', ')} · OIB {OWNER.oib} · ID kod {LICENSE.idCode} · {CONTACT.email} · {CONTACT.phones[0]}
         </div>

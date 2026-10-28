@@ -1,4 +1,4 @@
-# Vlak u snijegu
+# Veliki odmor
 
 Web aplikacija turističke agencije za školske izlete, ekskurzije i škole u prirodi.
 Vlasnik i organizator putovanja: **TERRA POMALO d.o.o.**

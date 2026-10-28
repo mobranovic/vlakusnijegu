@@ -1,9 +1,9 @@
 {
-  "name": "vlak-u-snijegu",
+  "name": "veliki-odmor",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Vlak u snijegu – turistička agencija za školske izlete i ekskurzije. Vlasnik: TERRA POMALO d.o.o.",
+  "description": "Veliki odmor – školski izleti i ekskurzije. Vlasnik: TERRA POMALO d.o.o.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
