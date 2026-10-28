@@ -6,10 +6,13 @@
   "description": "Veliki odmor – školski izleti i ekskurzije. Vlasnik: TERRA POMALO d.o.o.",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "build:preview": "VITE_ROUTER=hash INLINE_ASSETS=1 vite build --outDir dist-preview",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
     "lucide-react": "^0.460.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

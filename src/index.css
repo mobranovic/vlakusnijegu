@@ -21,15 +21,13 @@
   @page {
     margin: 16mm;
   }
-  .no-print,
-  #root {
+  .no-print {
     display: none !important;
   }
   .print-only {
     display: block;
-    font-family: Inter, Arial, sans-serif;
-    color: #081f3d;
-    font-size: 13px;
-    line-height: 1.45;
+  }
+  body {
+    background: #fff;
   }
 }

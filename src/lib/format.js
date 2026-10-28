@@ -1,5 +1,5 @@
-// Hrvatska množina: 1 dan, 2 dana; 1 noć, 2–4 noći, 5+ noći
-const plural = (n, one, few, many) => {
+// Množina: hrvatski (1 dan, 2 dana, 5 dana) i engleski (1 day, 2 days) iz rječnika t.duration
+const form = (n, [one, few, many]) => {
   const m10 = n % 10;
   const m100 = n % 100;
   if (m10 === 1 && m100 !== 11) return one;
@@ -7,7 +7,5 @@ const plural = (n, one, few, many) => {
   return many;
 };
 
-export const formatDuration = ({ days, nights }) =>
-  nights > 0
-    ? `${days} ${plural(days, 'dan', 'dana', 'dana')} / ${nights} ${plural(nights, 'noć', 'noći', 'noći')}`
-    : `${days} ${plural(days, 'dan', 'dana', 'dana')}`;
+export const formatDuration = ({ days, nights }, d) =>
+  nights > 0 ? `${days} ${form(days, d.day)} / ${nights} ${form(nights, d.night)}` : `${days} ${form(days, d.day)}`;

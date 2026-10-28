@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 // Modalni prozor: Esc zatvara, pozadina se ne pomiče, fokus se vraća na okidač.
-export function Dialog({ open, onClose, title, subtitle, children, size = 'lg' }) {
+export function Dialog({ open, onClose, title, subtitle, children, size = 'lg', closeLabel = 'Zatvori' }) {
   const panel = useRef(null);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export function Dialog({ open, onClose, title, subtitle, children, size = 'lg' }
             type="button"
             onClick={onClose}
             className="rounded-full p-2 text-slate-500 hover:bg-slate-100 hover:text-brand-900"
-            aria-label="Zatvori"
+            aria-label={closeLabel}
           >
             <X className="h-5 w-5" />
           </button>

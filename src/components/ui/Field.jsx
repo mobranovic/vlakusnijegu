@@ -11,7 +11,7 @@ const state = (error, valid) =>
       : 'border-slate-300 focus:border-brand-400 focus:ring-brand-100';
 
 // Polje obrasca s oznakom, pomoćnim tekstom i vizualnim stanjem (greška / ispravno)
-export function Field({ label, hint, required, error, valid, as = 'input', options, className = '', ...props }) {
+export function Field({ label, hint, required, error, valid, as = 'input', options, choose = '…', className = '', ...props }) {
   const id = useId();
   const describedBy = error ? `${id}-err` : hint ? `${id}-hint` : undefined;
   const common = {
@@ -26,7 +26,7 @@ export function Field({ label, hint, required, error, valid, as = 'input', optio
   if (as === 'select') {
     control = (
       <select {...common} className={`${common.className} h-11 appearance-none bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23103A6E%22 stroke-width=%222%22><path d=%22m6 9 6 6 6-6%22/></svg>')] bg-[length:16px] bg-[right_0.75rem_center] bg-no-repeat`}>
-        <option value="">Odaberite…</option>
+        <option value="">{choose}</option>
         {options.map((o) => (
           <option key={o.value} value={o.value}>{o.label}</option>
         ))}

@@ -1,29 +1,34 @@
 # Veliki odmor
 
-Web aplikacija turističke agencije za školske izlete, ekskurzije i škole u prirodi.
-Vlasnik i organizator putovanja: **TERRA POMALO d.o.o.**
+Web stranica agencije za školske izlete, ekskurzije i škole u prirodi (hrvatski i engleski).
+Brend turističke agencije **TERRA POMALO d.o.o.** (ID kod HR-AB-15-110168155).
 
-## Pokretanje
+## Naredbe
 
 ```bash
 npm install
-npm run dev      # razvoj
-npm run build    # statična izgradnja u dist/
-npm run preview  # pregled izgradnje
+npm run dev            # razvoj (rezervirana mjesta „[…]“ su vidljiva)
+npm run build          # klijent + SSR + scripts/prerender.mjs → dist/ (svaka adresa vlastiti index.html)
+npm run build:preview  # samostalni pregled (hash adrese, ?lang=en) u dist-preview/
 ```
 
-## Struktura
+Objava: `docs/objava.md`.
 
-- `src/data/trips.json` – primjeri programa (6), plan puta, uključeno / nije uključeno
-- `src/data/company.js` – podaci vlasnika, kontakt, licencija; `[…]` = čeka potvrdu prije objave
-- `src/components/` – Navbar, Hero (brza pretraga), TripCatalogue, TripCard, TripDetail (plan, uključeno, upit, ispis u PDF),
-  InquiryForm, TeachersSection (koraci po Pravilniku + obrazac za javni poziv), TrustSection, Footer
-- `src/components/ui/` – Button, Badge, Field/Checkbox (stanja greške i ispravnosti), Dialog, Section
-- `src/lib/` – provjera obrazaca (e-pošta, telefon, OIB, poveznica, datum, datoteka), `useForm`, oblikovanje trajanja
+## Gdje je što
 
-Obrasci se zasad provjeravaju i „šalju“ samo na klijentu (`fakeSend` u `src/lib/useForm.js`); slanje na poslužitelj slijedi.
+- Tekst: `src/i18n/hr.js` i `src/i18n/en.js` (isti ključevi); programi `src/i18n/trips.hr.js` i `trips.en.js`.
+- Podaci programa (trajanje, uzrast, fotografija): `src/data/trips.js`. Podaci društva, kontakt, domena: `src/data/company.js`.
+- Adrese (`src/route.jsx`): `/`, `/izleti/<slug>/`, `/za-roditelje/`, `/suradnja/`, `/o-nama/`, `/opci-uvjeti/`,
+  `/zastita-podataka/`, `/pravne-informacije/`; EN `/en/…` (`trips`, `for-parents`, `partners`, `about`, `terms`, `privacy`, `legal`).
+- Tekstualne stranice: `src/components/InfoPage.jsx` (`sections` s `text`, `rows`, `links`; `faq: true` = česta pitanja).
+- Obrasci: `src/mailto.js` (poslužitelj ili pričuva u programu za e-poštu), provjera u `src/lib/validation.js`.
+- SEO: `src/entry-server.jsx` (naslovi, opisi, JSON-LD: TravelAgency, TouristTrip, FAQPage, BreadcrumbList) i
+  `scripts/prerender.mjs` (canonical, hreflang, Open Graph, sitemap s jezičnim inačicama, robots.txt).
+- Fotografije: `public/images/<ime>.jpg` + `.webp`; slike za dijeljenje `og-*.jpg` (1200×630); autori u `PHOTO_CREDITS`.
+- Pisma su na vlastitom poslužitelju (`src/fonts.css`), bez Google Fonts i bez kolačića.
 
-## Prije objave upisati
+## Rezervirana mjesta
 
-Rješenje o upisu u Upisnik turističkih agencija (klasa, datum), PDV status, jamstvo i policu osiguranja, radno vrijeme, adrese društvenih mreža,
-Opće uvjete i Zaštitu podataka, fotografije programa te potvrditi programe i rokove iz Pravilnika.
+Sve u [uglatim zagradama] čeka potvrdu: vidi se u razvoju i pregledu, a na objavljenoj stranici se izostavlja.
+Otvoreno: domena, rješenje o upisu (datum), PDV status, jamstvo i polica osiguranja, radno vrijeme, okvirne cijene,
+broj rata, gratis, članstvo u udruženju, alternativno rješavanje sporova, društvene mreže, fotografije za Zagreb i Beč.

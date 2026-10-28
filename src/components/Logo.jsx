@@ -1,4 +1,5 @@
-import { BRAND, OWNER } from '../data/company.js';
+import { BRAND } from '../data/company.js';
+import { useT } from '../i18n/index.jsx';
 
 // Znak: školsko zvono koje najavljuje veliki odmor
 export function LogoMark({ className = 'h-10 w-10' }) {
@@ -14,15 +15,14 @@ export function LogoMark({ className = 'h-10 w-10' }) {
   );
 }
 
-export function Logo({ dark, withOwner }) {
+export function Logo({ dark }) {
+  const t = useT();
   return (
     <span className="flex items-center gap-3">
       <LogoMark />
       <span className="leading-tight">
-        <span className={`block font-display text-lg font-bold ${dark ? 'text-white' : 'text-brand-900'}`}>{BRAND.name}</span>
-        <span className={`block text-[11px] font-medium ${dark ? 'text-brand-200' : 'text-slate-500'}`}>
-          {withOwner ? `${BRAND.tagline} · ${OWNER.name}` : BRAND.tagline}
-        </span>
+        <span className={`block font-display text-lg font-bold ${dark ? 'text-white' : 'text-brand-900'}`}>{BRAND}</span>
+        <span className={`block text-[11px] font-medium ${dark ? 'text-brand-200' : 'text-slate-500'}`}>{t.ui.tagline}</span>
       </span>
     </span>
   );

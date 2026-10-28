@@ -1,0 +1,370 @@
+import trips from './trips.hr.js';
+
+// Sav tekst na hrvatskom. Isti ključevi su u en.js. Uglate zagrade [..] = čeka potvrdu (na objavljenoj stranici se ne vide).
+const EMAILS = 'info@terrapomalo.hr ili terrapomalo@gmail.com';
+const PHONES = '+385 95 881 7779 ili +385 91 524 5676 (i WhatsApp)';
+
+export default {
+  meta: {
+    lang: 'hr',
+    locale: 'hr_HR',
+    title: 'Veliki odmor',
+    homeTitle: 'Veliki odmor – školski izleti, ekskurzije i škole u prirodi',
+    homeDescription:
+      'Školski izleti, ekskurzije i škole u prirodi po Hrvatskoj i Europi, u skladu s Pravilnikom o izvođenju izleta i ekskurzija. Ponude na javne pozive škola i koordinator 0–24 h.',
+  },
+
+  ui: {
+    skip: 'Preskoči na sadržaj',
+    menuOpen: 'Otvori izbornik',
+    menuClose: 'Zatvori izbornik',
+    close: 'Zatvori',
+    home: 'Početna',
+    nav: 'Glavna navigacija',
+    requestOffer: 'Zatraži ponudu za školu',
+    requestOfferShort: 'Ponuda za školu',
+    langSwitch: 'English',
+    langLabel: 'Switch to English',
+    tagline: 'Školski izleti i ekskurzije',
+    brandOf: 'brend turističke agencije',
+  },
+
+  options: {
+    type: [
+      { value: 'jednodnevni', label: 'Jednodnevni izlet', short: 'Jednodnevni' },
+      { value: 'visednevni', label: 'Višednevno putovanje', short: 'Višednevni' },
+    ],
+    destination: [
+      { value: 'hrvatska', label: 'Hrvatska' },
+      { value: 'inozemstvo', label: 'Inozemstvo' },
+    ],
+    age: [
+      { value: 'razredna', label: 'Razredna nastava (1. – 4.)', short: '1. – 4. razred' },
+      { value: 'predmetna', label: 'Predmetna nastava (5. – 8.)', short: '5. – 8. razred' },
+      { value: 'srednja', label: 'Srednja škola', short: 'Srednja škola' },
+    ],
+  },
+
+  duration: { day: ['dan', 'dana', 'dana'], night: ['noć', 'noći', 'noći'] },
+
+  // Oznake mjesta na početnoj stranici (u adresi iza #)
+  ids: { trips: 'izleti', teachers: 'nastavnici', parents: 'roditelji', trust: 'sigurnost', partners: 'suradnja', complaints: 'prigovori' },
+
+  // Izbornik: section = mjesto na početnoj, filter = vrsta izleta u katalogu, page = zasebna stranica, contact = podnožje
+  nav: [
+    { label: 'Jednodnevni izleti', section: 'trips', filter: 'jednodnevni' },
+    { label: 'Višednevna putovanja', section: 'trips', filter: 'visednevni' },
+    { label: 'Za nastavnike', section: 'teachers' },
+    { label: 'Za roditelje', page: 'parents' },
+    { label: 'Suradnja', page: 'partners' },
+    { label: 'O nama', page: 'about' },
+    { label: 'Kontakt', contact: true },
+  ],
+
+  hero: {
+    badge: 'Turistička agencija TERRA POMALO d.o.o. · ID kod HR-AB-15-110168155',
+    title: 'Sigurna i nezaboravna školska putovanja i izleti',
+    text: 'Programi koji spajaju nastavne sadržaje, zabavu i druženje, pripremljeni u skladu s Pravilnikom o izvođenju izleta, ekskurzija i drugih odgojno-obrazovnih aktivnosti izvan škole Ministarstva znanosti, obrazovanja i mladih.',
+    points: ['Povezano s kurikulumom', 'Osiguranje i koordinator 0–24 h', 'Gratis za pratitelje'],
+    search: { label: 'Brza pretraga izleta', type: 'Vrsta', destination: 'Odredište', age: 'Uzrast', allType: 'Sve vrste', allDestination: 'Sva odredišta', allAge: 'Svi uzrasti', submit: 'Pretraži' },
+  },
+
+  catalogue: {
+    eyebrow: 'Katalog programa',
+    title: 'Izleti, ekskurzije i škole u prirodi',
+    text: 'Svaki program prilagođavamo razredu, broju učenika i terminu. Odaberite filtre ili otvorite program za detaljan plan puta.',
+    filters: 'Filtri',
+    groups: { type: 'Trajanje', destination: 'Odredište', age: 'Uzrast' },
+    all: 'Sve',
+    showing: (n, total) => `Prikazano programa: ${n} od ${total}`,
+    reset: 'Poništi filtre',
+    empty: 'Nema programa za odabrane filtre.',
+    emptyText: 'Pripremit ćemo program po mjeri vašeg razreda – pošaljite nam upit.',
+    view: 'Pogledaj program',
+    highlights: 'Istaknuto',
+    photo: 'Mjesto za fotografiju programa',
+  },
+
+  trip: {
+    back: 'Svi programi',
+    itinerary: 'Plan puta',
+    itineraryNote: 'Satnica je okvirna i usklađuje se sa školom; polazak i povratak prilagođavamo mjestu škole.',
+    included: 'Cijena uključuje',
+    notIncluded: 'Cijena ne uključuje',
+    subjects: 'Povezanost s predmetima',
+    price: 'Cijena',
+    priceText: 'Cijena ovisi o broju učenika, terminu i smještaju. Iskazujemo je po učeniku u ponudi na javni poziv ili na vaš upit. [Okvirno od … € po učeniku]',
+    payment: 'Roditelji mogu platiti jednokratno, karticama ili obročno. [Broj rata i rokovi prema ugovoru sa školom]',
+    gratis: 'Gratis za pratitelje prema ugovoru sa školom. [npr. 1 gratis na 15 učenika]',
+    print: 'Ispiši / spremi PDF',
+    printNote: 'Za Vijeće roditelja i povjerenstvo za provedbu javnog poziva.',
+    share: 'Podijeli',
+    whatsapp: 'Pošalji WhatsAppom',
+    copy: 'Kopiraj poveznicu',
+    copied: 'Poveznica je kopirana',
+    inquiryTitle: 'Pošaljite upit za ovaj izlet',
+    inquiryText: 'Odgovaramo s prijedlogom programa za vaš razred i cijenom po učeniku.',
+    more: 'Drugi programi',
+    breadcrumb: 'Izleti',
+  },
+
+  teachers: {
+    publicCall: true,
+    eyebrow: 'Za nastavnike',
+    title: 'Kako naručiti izlet ili ekskurziju',
+    text: 'Pratimo vas kroz postupak propisan Pravilnikom o izvođenju izleta, ekskurzija i drugih odgojno-obrazovnih aktivnosti izvan škole, od planiranja do izvješća.',
+    steps: [
+      { title: 'Planiranje u kurikulumu', text: 'Izlet, ekskurzija ili škola u prirodi planira se u školskom kurikulumu i godišnjem planu i programu rada škole, s ciljevima i nositeljima aktivnosti.' },
+      { title: 'Povjerenstvo', text: 'Za višednevnu izvanučioničku nastavu škola imenuje povjerenstvo za provedbu javnog poziva i izbor ponude.' },
+      { title: 'Javni poziv', text: 'Škola objavljuje javni poziv na propisanom obrascu na svojoj mrežnoj stranici, najkasnije tri mjeseca prije putovanja, s rokom za ponude od najmanje osam radnih dana.' },
+      { title: 'Odabir ponuda', text: 'Povjerenstvo otvara ponude i odabire one koje se predstavljaju roditeljima, u pravilu najmanje tri.' },
+      { title: 'Roditeljski sastanak', text: 'Agencije predstavljaju programe roditeljima, koji odabiru ponudu. Rado dolazimo i predstavljamo program uživo.' },
+      { title: 'Ugovor i provedba', text: 'Sklapa se ugovor s agencijom, roditelji potpisuju suglasnosti, a nakon putovanja voditelj podnosi izvješće.' },
+    ],
+    note: 'Jednodnevni izlet škola može organizirati i samostalno ili uz davatelja usluga. Sažetak Pravilnika (NN 67/14, 81/15, 53/21); mjerodavan je važeći tekst.',
+    formTitle: 'Pošaljite javni poziv',
+    formText: 'Upišite poveznicu na objavljeni javni poziv. Ponudu dostavljamo u roku navedenom u pozivu.',
+    bullets: ['Ponuda na obrascu iz javnog poziva', 'Dokaz o upisu u registar turističkih agencija i o jamstvu', 'Predstavljanje na roditeljskom sastanku'],
+  },
+
+  parentsTeaser: {
+    eyebrow: 'Za roditelje',
+    title: 'Što roditelji najčešće pitaju',
+    text: 'Nadzor, smještaj, prehrana, zdravlje, prijevoz i plaćanje: odgovore smo skupili na jednom mjestu.',
+    points: [
+      { title: 'Koordinator 0–24 h', text: 'Tijekom putovanja nastavnici imaju izravan broj dežurnog koordinatora agencije.' },
+      { title: 'Prehrana i alergije', text: 'Posebne prehrambene potrebe javljate pri prijavi, a mi ih usklađujemo sa smještajem i restoranima.' },
+      { title: 'Plaćanje u ratama', text: 'Putovanje možete platiti jednokratno, karticama ili obročno.' },
+    ],
+    link: 'Sva pitanja i odgovori',
+  },
+
+  trust: {
+    eyebrow: 'O nama',
+    title: 'Sigurnost na prvom mjestu',
+    text: 'Veliki odmor je brend turističke agencije TERRA POMALO d.o.o., specijaliziran za školska putovanja. Planiramo ih kao roditelji i nastavnici: provjereni prijevoznici, smještaj prilagođen djeci i stalna dostupnost tijekom puta.',
+    ownerLabel: 'Organizator putovanja',
+    badges: [
+      { title: 'Upisana turistička agencija', text: 'Identifikacijska oznaka (ID kod) HR-AB-15-110168155.' },
+      { title: 'Osiguranje putnika', text: 'Osiguranje od nesretnog slučaja uključeno je u svaki program, a za putovanja u inozemstvo i putno zdravstveno osiguranje.' },
+      { title: 'Jamstvo', text: 'Organizator ima osiguranje za slučaj nesolventnosti, u skladu sa Zakonom o pružanju usluga u turizmu.' },
+      { title: 'Koordinator 0–24 h', text: 'Tijekom putovanja nastavnici imaju izravan broj dežurnog koordinatora: +385 95 881 7779.' },
+    ],
+    more: 'Više o nama',
+  },
+
+  partnersTeaser: {
+    eyebrow: 'Suradnja',
+    title: 'Hoteli, domovi, turističke zajednice i domaćini',
+    text: 'Školske grupe putuju u proljeće i jesen, izvan glavne sezone. Ako imate smještaj, edukativni sadržaj ili proizvod za mlade, javite nam se.',
+    link: 'Mogućnosti suradnje',
+  },
+
+  forms: {
+    name: 'Ime i prezime',
+    teacher: 'Ime i prezime nastavnika',
+    school: 'Naziv škole i mjesto',
+    schoolPlaceholder: 'npr. OŠ Ivana Gorana Kovačića, Delnice',
+    email: 'E-pošta',
+    phone: 'Telefon',
+    phonePlaceholder: '+385 …',
+    grade: 'Uzrast',
+    date: 'Okvirni termin',
+    dateHint: 'Ako termin još nije poznat, ostavite prazno.',
+    students: 'Broj učenika',
+    escorts: 'Broj pratitelja',
+    escortsHint: 'Učitelji i stručni suradnici',
+    trip: 'Program koji vas zanima',
+    custom: 'Program po mjeri',
+    note: 'Napomena',
+    notePlaceholder: 'Posebni zahtjevi, prehrana, učenici s teškoćama…',
+    choose: 'Odaberite…',
+    consent: 'Pristajem da TERRA POMALO d.o.o. (Veliki odmor) obradi navedene podatke radi pripreme ponude.',
+    privacyLink: 'Obrada i zaštita podataka',
+    submitTrip: 'Pošalji upit za ovaj izlet',
+    submit: 'Zatraži ponudu',
+    sending: 'Šaljem…',
+    subjectTrip: (title) => `Upit za izlet: ${title}`,
+    subjectOffer: 'Upit za ponudu za školu',
+    sentTitle: 'Upit je poslan',
+    sentText: 'Hvala! Ponudu i prijedlog programa šaljemo na vašu e-poštu u roku od [2] radna dana.',
+    mailtoTitle: 'Poruka je pripremljena',
+    mailtoText: 'Otvorili smo vaš program za e-poštu s pripremljenom porukom. Pošaljite je, a ako se program nije otvorio, pišite nam na info@terrapomalo.hr.',
+    again: 'Pošalji novi upit',
+    required: 'obavezno',
+    // Javni poziv
+    callTitle: 'Javni poziv',
+    callSchool: 'Naziv škole',
+    callOib: 'OIB škole',
+    callOibHint: '11 znamenki',
+    callCity: 'Mjesto',
+    callContact: 'Kontakt osoba',
+    callContactHint: 'Predsjednik povjerenstva ili razrednik',
+    callNumber: 'Broj javnog poziva',
+    callNumberPlaceholder: 'npr. 3/2026',
+    callLink: 'Poveznica na javni poziv',
+    callDeadline: 'Rok za dostavu ponuda',
+    callNotePlaceholder: 'Razred, broj učenika, željeno odredište…',
+    callConsent: 'Potvrđujem da je javni poziv objavljen na mrežnoj stranici škole i pristajem na obradu podataka radi izrade ponude.',
+    callSubmit: 'Pošalji javni poziv',
+    callSubject: (school) => `Javni poziv: ${school}`,
+    callSentTitle: 'Javni poziv je poslan',
+    callSentText: 'Potvrdu primitka šaljemo na vašu e-poštu, a ponudu dostavljamo u roku navedenom u javnom pozivu.',
+    // Suradnja
+    partnerTitle: 'Javite nam se',
+    partnerType: 'Tko ste',
+    partnerTypes: [
+      { value: 'smjestaj', label: 'Hotel, hostel ili učenički dom' },
+      { value: 'tz', label: 'Turistička zajednica' },
+      { value: 'sadrzaj', label: 'OPG, muzej, park ili edukativni sadržaj' },
+      { value: 'industrija', label: 'Proizvođač ili brend' },
+      { value: 'agencija', label: 'Turistička agencija u Hrvatskoj' },
+      { value: 'strana', label: 'Agencija ili škola iz inozemstva' },
+    ],
+    company: 'Naziv tvrtke ili ustanove',
+    partnerMessage: 'Što predlažete',
+    partnerConsent: 'Pristajem da TERRA POMALO d.o.o. obradi navedene podatke radi odgovora na upit.',
+    partnerSubmit: 'Pošalji upit za suradnju',
+    partnerSubject: (company) => `Suradnja: ${company}`,
+  },
+
+  v: {
+    required: 'Ovo polje je obavezno.',
+    email: 'Upišite ispravnu adresu e-pošte.',
+    phone: 'Upišite ispravan broj telefona (npr. +385 91 123 4567).',
+    url: 'Upišite ispravnu poveznicu (npr. https://www.skola.hr/javni-poziv).',
+    range: (min, max) => `Upišite cijeli broj od ${min} do ${max}.`,
+    future: 'Datum ne može biti u prošlosti.',
+    oib: 'OIB mora imati 11 znamenki i ispravnu kontrolnu znamenku.',
+    consent: 'Potrebna je vaša privola.',
+    choose: 'Odaberite jednu mogućnost.',
+  },
+
+  footer: {
+    text: 'Školski izleti, ekskurzije i škole u prirodi po Hrvatskoj i Europi.',
+    contact: 'Kontakt',
+    hours: 'Dostupnost',
+    hoursRows: [
+      ['Upiti', 'e-pošta, telefon i WhatsApp [radno vrijeme: pon – pet 08:00 – 16:00]'],
+      ['Tijekom putovanja', '0 – 24 h'],
+    ],
+    links: 'Brze poveznice',
+    company: 'Organizator putovanja',
+    idCode: 'ID kod',
+    board: 'Uprava',
+    capital: 'Temeljni kapital',
+    capitalPaid: 'uplaćen u cijelosti',
+    rights: 'Sva prava pridržana.',
+    complaints: 'Prigovori',
+    social: 'Pratite nas',
+    legalLinks: [
+      { label: 'Opći uvjeti', page: 'terms' },
+      { label: 'Zaštita podataka', page: 'privacy' },
+      { label: 'Pravne informacije', page: 'legal' },
+    ],
+  },
+
+  pages: {
+    parents: {
+      title: 'Za roditelje',
+      description: 'Odgovori za roditelje: nadzor učenika, smještaj, prehrana i alergije, zdravlje i osiguranje, prijevoz, mobiteli, džeparac i plaćanje u ratama.',
+      intro: 'Prepuštate nam ono najvrjednije. Ovdje su odgovori na pitanja koja roditelji najčešće postavljaju; za sve ostalo nazovite nas ili pišite.',
+      faq: true,
+      sections: [
+        { id: 'nadzor', title: 'Tko brine o djeci tijekom putovanja?', text: ['O učenicima brinu učitelji pratitelji koje određuje škola. Voditelj putovanja agencije vodi organizaciju: prijevoz, smještaj, obroke, vodiče i ulaznice. Tijekom cijelog putovanja nastavnici imaju izravan broj dežurnog koordinatora agencije, 0–24 h.'] },
+        { id: 'smjestaj', title: 'Kakav je smještaj i tko je s djecom noću?', text: ['Smještaj biramo prema dobi učenika: učenički domovi, hosteli i hoteli provjereni za školske grupe. Raspored po sobama dogovaramo sa školom, a pratitelji su smješteni u blizini učenika. Noćni nadzor dogovaramo sa školom i smještajem prije polaska.'] },
+        { id: 'prehrana', title: 'Moje dijete ima alergiju ili posebnu prehranu. Što učiniti?', text: ['Pri prijavi navedite alergije i posebne prehrambene potrebe (npr. bez glutena, vegetarijanska prehrana). Usklađujemo ih sa smještajem i restoranima prije polaska, a voditelj putovanja ih provjerava na licu mjesta. Lijekove dijete nosi sa sobom, uz obavijest pratiteljima.'] },
+        { id: 'zdravlje', title: 'Što ako se dijete razboli ili ozlijedi?', text: ['Pratitelji i voditelj putovanja odmah organiziraju liječničku pomoć i obavještavaju roditelje. Osiguranje od nesretnog slučaja uključeno je u svaki program. Na putovanjima u Hrvatskoj dijete nosi zdravstvenu iskaznicu, a u inozemstvu europsku karticu zdravstvenog osiguranja; za inozemstvo je uključeno i putno zdravstveno osiguranje.'] },
+        { id: 'prijevoz', title: 'Tko vozi djecu i je li autobus provjeren?', text: ['Prijevoz obavljaju prijevoznici registrirani za prijevoz putnika, s turističkim autobusima. Vozači poštuju propisano vrijeme vožnje i odmora, a na duljim relacijama voze dva vozača. Škola može prije polaska zatražiti od policije pregled autobusa.'] },
+        { id: 'mobiteli', title: 'Mogu li djeca imati mobitele i koliko džeparca?', text: ['Pravila o mobitelima i džeparcu određuje škola i dogovara ih s roditeljima na roditeljskom sastanku. U programu navodimo što je uključeno u cijenu, kako biste znali za što je džeparac potreban.'] },
+        { id: 'placanje', title: 'Kako se plaća i mogu li platiti u ratama?', text: ['Putovanje možete platiti jednokratno, karticama ili obročno. Uplate idu na žiro račun TERRA POMALO d.o.o., a podatke za plaćanje i plan rata dobivate nakon potpisa ugovora sa školom. [Broj rata i rokovi]'] },
+        { id: 'otkaz', title: 'Što ako dijete ne može putovati?', text: ['Javite nam se čim prije. Naknada za otkaz ovisi o tome koliko je dana ostalo do polaska, prema Općim uvjetima i ugovoru sa školom. Izborno osiguranje od otkaza putovanja pokriva otkaz zbog bolesti i drugih opravdanih razloga.'] },
+        { id: 'obavijesti', title: 'Kako ćemo znati da su djeca stigla?', text: ['Voditelj putovanja javlja pratiteljima i školi dolazak na odredište i polazak natrag, a škola obavještava roditelje na dogovoreni način. [Zajednička grupa za obavijesti roditeljima]'] },
+        { id: 'jamstvo', title: 'Što ako agencija ne izvrši putovanje?', text: ['Organizator ima osiguranje za slučaj nesolventnosti, kojim su osigurani povrat uplata i, ako je prijevoz uključen, povratak putnika. Podaci su u Općim uvjetima.'] },
+      ],
+      links: [{ label: 'Opći uvjeti', page: 'terms' }],
+    },
+
+    partners: {
+      title: 'Suradnja',
+      description: 'Suradnja s agencijom Veliki odmor za hotele, hostele i učeničke domove, turističke zajednice, OPG-ove i edukativne sadržaje, proizvođače te agencije iz Hrvatske i inozemstva.',
+      intro: 'Školske grupe putuju u proljeće i jesen, izvan glavne sezone, i traže sadržaje koji uče i zabavljaju. Ako možete pridonijeti, ovdje su načini na koje surađujemo.',
+      sections: [
+        { id: 'smjestaj', title: 'Hoteli, hosteli i učenički domovi', text: ['Tražimo smještaj prilagođen školskim grupama: višekrevetne sobe, sobe za pratitelje u blizini, puni pansion i prostor za večernji program. Termini su uglavnom u travnju, svibnju, lipnju, rujnu i listopadu, kad je smještaj slobodniji.'] },
+        { id: 'tz', title: 'Turističke zajednice', text: ['S turističkim zajednicama razvijamo školske programe destinacije: poučne staze, radionice, muzeje i lokalne priče. Takav program puni smještaj izvan sezone i vraća obitelji koje su kraj upoznale preko škole.'] },
+        { id: 'sadrzaj', title: 'OPG-ovi, muzeji, parkovi i edukativni sadržaji', text: ['Učenici rado uče od ljudi koji rade ono o čemu pričaju: na farmi, u radionici, uljari, muzeju ili parku prirode. Dogovaramo posjete i radionice za grupe od jednog razreda do cijele generacije, uz poznat raspored i broj učenika.'] },
+        { id: 'industrija', title: 'Proizvođači i brendovi', text: ['Edukativni sadržaj vezan uz vaš proizvod (npr. kako nastaje hrana, energija ili tehnologija) može biti dio programa: posjet pogonu, radionica ili zdrava užina. Suradnja je u skladu s pravilima škole, bez izravnog oglašavanja učenicima.'] },
+        { id: 'agencije', title: 'Turističke agencije u Hrvatskoj', text: ['Naše programe možete ponuditi svojim školama ili s nama zajedno pripremiti ponudu na javni poziv. Neto cijene, proviziju i uvjete šaljemo na upit.'] },
+        { id: 'strane', title: 'Agencije i škole iz inozemstva', text: ['Za škole iz Slovenije, Austrije, Njemačke, susjednih zemalja i šire pripremamo programe u Hrvatskoj: priroda, povijest, more i jezik. Programe prilagođavamo dolasku grupe i jeziku vodstva.'], links: [{ label: 'Stranica na engleskom', page: 'partners', lang: 'en' }] },
+        { id: 'podaci', title: 'Podaci za partnere', rows: [['Organizator', 'TERRA POMALO d.o.o., Nova ulica 17, Žaborić, 22000 Šibenik'], ['OIB', '52072209280'], ['Identifikacijska oznaka (ID kod)', 'HR-AB-15-110168155'], ['Jamstvo za slučaj nesolventnosti', '[Osiguravatelj ili banka, broj police ili jamstva]'], ['Članstvo u udruženju', '[npr. UHPA]']] },
+      ],
+      form: true,
+    },
+
+    about: {
+      title: 'O nama',
+      description: 'Veliki odmor je brend turističke agencije TERRA POMALO d.o.o. iz Šibenika za školske izlete, ekskurzije i škole u prirodi.',
+      intro: 'Veliki odmor je najljepši dio školskog dana. Želimo da takvo bude i svako školsko putovanje: dobro pripremljeno, sigurno i puno stvari koje će učenici pamtiti.',
+      sections: [
+        { id: 'tko-smo', title: 'Tko smo', text: ['Veliki odmor je brend turističke agencije TERRA POMALO d.o.o. iz Šibenika, specijaliziran za školske izlete, ekskurzije i škole u prirodi. Agenciju vode Snježana Cenić Stojaković i Marko Obranović; Marko iza sebe ima više od 20 godina rada u turizmu.', 'Isto društvo pod imenom Terra Pomalo organizira putovanja posvećena gastronomiji, prirodi i mediteranskom načinu života.'], links: [{ label: 'terrapomalo.hr', href: 'https://www.terrapomalo.hr' }] },
+        { id: 'kako-radimo', title: 'Kako radimo', text: ['Svaki program povezujemo s nastavnim predmetima, a satnicu usklađujemo s uzrastom učenika. Sa školom dogovaramo sve pojedinosti, od smještaja i prehrane do večernjeg programa, a tijekom putovanja smo dostupni 0–24 h.'] },
+        { id: 'drustvo', title: 'Podaci o društvu', rows: [['Tvrtka', 'TERRA POMALO d.o.o. za usluge, turistička agencija'], ['Sjedište', 'Nova ulica 17, Žaborić, 22000 Šibenik'], ['OIB', '52072209280'], ['Identifikacijska oznaka (ID kod)', 'HR-AB-15-110168155']], links: [{ label: 'Sve pravne informacije', page: 'legal' }] },
+      ],
+    },
+
+    terms: {
+      title: 'Opći uvjeti poslovanja',
+      description: 'Opći uvjeti poslovanja za školska putovanja agencije Veliki odmor (TERRA POMALO d.o.o.): ugovor, plaćanje i rate, otkaz, promjene programa, jamstvo i prigovori.',
+      intro: 'Uvjeti vrijede za školske izlete, ekskurzije i škole u prirodi koje organizira TERRA POMALO d.o.o. pod imenom Veliki odmor. Uvjeti vrijede od [datum objave].',
+      sections: [
+        { id: 'opce-odredbe', title: 'Opće odredbe', text: ['Ovi uvjeti uređuju odnos između TERRA POMALO d.o.o., Nova ulica 17, Žaborić, 22000 Šibenik, OIB 52072209280, ID kod HR-AB-15-110168155 (organizator), škole koja naručuje putovanje i putnika (učenika i njihovih roditelja ili skrbnika te pratitelja).', 'Uvjeti su sastavni dio ugovora o paket aranžmanu. Primjenjuju se uz Zakon o pružanju usluga u turizmu, Zakon o obveznim odnosima, Zakon o zaštiti potrošača i Pravilnik o izvođenju izleta, ekskurzija i drugih odgojno-obrazovnih aktivnosti izvan škole. Ako se program ili ugovor sa školom razlikuju od ovih uvjeta, vrijedi program, odnosno ugovor.'] },
+        { id: 'ugovor', title: 'Ponuda i ugovor', text: ['Ponudu dostavljamo na javni poziv škole ili na upit, s programom, cijenom po učeniku i obrascem standardnih informacija. Nakon odabira ponude na roditeljskom sastanku sklapa se ugovor sa školom, a roditelji ili skrbnici potpisuju prijavu i suglasnost za putovanje učenika.'] },
+        { id: 'cijene', title: 'Cijene i plaćanje', text: ['Cijene su iskazane u eurima po učeniku i obuhvaćaju usluge navedene u programu pod „Cijena uključuje“. Gratis za pratitelje određuje se ugovorom sa školom.', 'Uplate se obavljaju na žiro račun TERRA POMALO d.o.o. kod Zagrebačke banke d.d. (UniCredit Group), IBAN HR83 2360 0001 1033 1654 9, SWIFT/BIC ZABAHR2X, uz poziv na broj iz ugovora. Moguće je i plaćanje karticama te obročno plaćanje, prema planu rata iz ugovora.', 'Cijenu možemo povećati samo zbog promjene cijene goriva, poreza i pristojbi ili tečaja, i to najkasnije 20 dana prije početka putovanja. Ako povećanje prelazi 8 % cijene, možete raskinuti ugovor bez naknade.'], links: [{ label: 'Podaci za plaćanje', page: 'legal' }] },
+        { id: 'otkaz-putnika', title: 'Otkaz putnika', text: ['Putnik može otkazati putovanje u bilo kojem trenutku prije početka, pisanom izjavom poslanom e-poštom. Organizator tada zadržava naknadu za otkaz prema danu primitka izjave, ako ugovorom sa školom nije drukčije određeno:'], rows: [['Više od 60 dana prije početka', '10 % cijene'], ['Od 60 do 31 dana', '30 % cijene'], ['Od 30 do 15 dana', '50 % cijene'], ['Od 14 do 8 dana', '80 % cijene'], ['7 dana i manje ili nedolazak', '100 % cijene']] },
+        { id: 'zamjena', title: 'Zamjena putnika i otkaz bez naknade', text: ['Umjesto učenika koji ne može putovati može putovati drugi učenik istog razreda, ako nas škola o tome obavijesti najkasnije 7 dana prije početka.', 'Naknadu za otkaz ne plaćate ako na odredištu ili u njegovoj neposrednoj blizini nastupe neizbježne i izvanredne okolnosti koje znatno utječu na izvršenje putovanja. Izborno osiguranje od otkaza putovanja pokriva otkaz zbog bolesti i drugih razloga navedenih u polici.'] },
+        { id: 'promjene', title: 'Promjene programa i otkaz organizatora', text: ['Manje promjene programa, npr. redoslijed aktivnosti zbog vremenskih uvjeta, možemo napraviti uz obavijest voditelju puta. O bitnim promjenama obavještavamo školu bez odgode: škola ih može prihvatiti ili raskinuti ugovor bez naknade.', 'Putovanje možemo otkazati uz povrat svih uplata ako se ne prijavi najmanji broj učenika naveden u ugovoru, najkasnije 20 dana prije putovanja duljeg od 6 dana, 7 dana prije putovanja od 2 do 6 dana i 48 sati prije putovanja kraćeg od 2 dana. Sve povrate isplaćujemo najkasnije u roku od 14 dana od raskida ugovora.'] },
+        { id: 'jamstvo', title: 'Jamstvo za slučaj nesolventnosti', text: ['Organizator ima osiguranje za slučaj nesolventnosti kojim su osigurani povrat uplaćenih iznosa i, ako je prijevoz uključen u paket aranžman, povratak putnika. U slučaju nesolventnosti obratite se izravno osiguravatelju.'], rows: [['Jamstvo za slučaj nesolventnosti', '[Osiguravatelj ili banka, broj police ili jamstva, kontakt za putnike]'], ['Osiguranje od odgovornosti', '[Osiguravatelj, broj police]']] },
+        { id: 'osiguranje', title: 'Osiguranje putnika', text: ['Osiguranje od nesretnog slučaja uključeno je u cijenu svakog programa, a za putovanja u inozemstvo i putno zdravstveno osiguranje. Osiguranje od otkaza putovanja je izborno.'] },
+        { id: 'prigovori', title: 'Prigovori', text: [`Nedostatak u izvršenju usluge prijavite bez odgode voditelju putovanja ili pružatelju usluge na licu mjesta. Ako ga ne otklone, javite nam se na ${PHONES} te e-poštom na ${EMAILS}.`, 'Pisani prigovor pošaljite e-poštom ili poštom na adresu sjedišta. Primitak potvrđujemo bez odgode, a pisani odgovor dajemo najkasnije u roku od 15 dana od primitka.'] },
+        { id: 'zavrsne', title: 'Završne odredbe', text: ['Na ugovore se primjenjuje pravo Republike Hrvatske. Sporove nastojimo riješiti sporazumno, a ako to nije moguće, nadležan je stvarno nadležni sud u Šibeniku, osim ako zakon za potrošače propisuje drukčije.'] },
+      ],
+    },
+
+    privacy: {
+      title: 'Obrada i zaštita podataka',
+      description: 'Kako TERRA POMALO d.o.o. (Veliki odmor) obrađuje i štiti osobne podatke nastavnika, roditelja i učenika te koja su vaša prava.',
+      sections: [
+        { id: 'voditelj', title: 'Voditelj obrade', rows: [['Tvrtka', 'TERRA POMALO d.o.o.'], ['Sjedište', 'Nova ulica 17, Žaborić, 22000 Šibenik'], ['OIB', '52072209280'], ['E-pošta', 'info@terrapomalo.hr · terrapomalo@gmail.com'], ['Telefon', '+385 95 881 7779 · +385 91 524 5676']] },
+        { id: 'podaci', title: 'Koje podatke obrađujemo', text: ['Podatke koje upišete u obrasce za upit, javni poziv ili suradnju: ime i prezime, e-poštu, telefon, naziv i OIB škole ili tvrtke te podatke o putovanju.', 'Za izvršenje putovanja škola ili roditelji nam dostavljaju popis učenika i pratitelja te, kad je potrebno, podatke iz osobne isprave i posebne potrebe (npr. prehrambene ili zdravstvene). Takve podatke tražimo samo kad su potrebni, koristimo ih isključivo za to putovanje i dajemo samo pružateljima usluga kojima su nužni.'] },
+        { id: 'svrha', title: 'Svrha i pravna osnova', text: ['Podatke obrađujemo isključivo u ove svrhe (čl. 6. i 9. Opće uredbe o zaštiti podataka):'], rows: [['Odgovor na upit i ponuda na javni poziv', 'Zahtjev prije sklapanja ugovora i privola, koju možete povući u bilo kojem trenutku'], ['Izvršenje putovanja', 'Izvršenje ugovora sa školom i roditeljima'], ['Zdravstveni podaci i prehrana učenika', 'Izričita privola roditelja ili skrbnika'], ['Računi i knjigovodstvo', 'Zakonska obveza']] },
+        { id: 'rok', title: 'Rok čuvanja', rows: [['Upiti bez sklopljenog ugovora', 'Do 12 mjeseci od posljednje komunikacije'], ['Popisi putnika i posebne potrebe', 'Do završetka putovanja i rješavanja eventualnih prigovora'], ['Ugovori i podaci o putovanju', 'Do isteka zastare potraživanja, najdulje 5 godina od izvršenja'], ['Računi i knjigovodstvene isprave', '11 godina, prema Zakonu o računovodstvu']] },
+        { id: 'primatelji', title: 'Primatelji podataka', text: ['Podatke dajemo samo onima kojima su potrebni za izvršenje putovanja: smještaju, prijevozniku, vodičima, osiguratelju i knjigovodstvenom servisu te pružateljima poslužitelja i e-pošte. Nadležnim tijelima dajemo ih kad to propisuje zakon. Pružatelj usluge e-pošte (Google) može podatke obrađivati izvan Europske unije, uz zaštitne mjere u skladu s Općom uredbom o zaštiti podataka. Podatke ne prodajemo i ne koristimo ih za oglašavanje.'] },
+        { id: 'prava', title: 'Vaša prava', text: ['Imate pravo na pristup, ispravak i brisanje podataka, ograničenje obrade, prenosivost podataka, prigovor na obradu te povlačenje privole u bilo kojem trenutku. Zahtjev pošaljite na info@terrapomalo.hr ili terrapomalo@gmail.com; odgovaramo najkasnije u roku od mjesec dana.', 'Pritužbu možete podnijeti Agenciji za zaštitu osobnih podataka (AZOP), Selska cesta 136, 10000 Zagreb, azop.hr.'] },
+        { id: 'kolacici', title: 'Kolačići', text: ['Stranica ne koristi kolačiće ni alate za praćenje posjeta. Pisma su smještena na našem poslužitelju, pa se pri posjetu podaci ne šalju trećim stranama.'] },
+      ],
+    },
+  },
+
+  legal: {
+    title: 'Pravne informacije',
+    description: 'Podaci o društvu TERRA POMALO d.o.o., turističkoj agenciji, plaćanju, zaštiti putnika, prigovorima i zaštiti osobnih podataka.',
+    sections: [
+      { id: 'drustvo', title: 'Podaci o društvu', rows: [['Tvrtka', 'TERRA POMALO d.o.o. za usluge, turistička agencija'], ['Skraćena tvrtka', 'TERRA POMALO d.o.o.'], ['Brend', 'Veliki odmor'], ['Sjedište', 'Nova ulica 17, Žaborić, 22000 Šibenik'], ['Sudski registar', 'Trgovački sud u Šibeniku'], ['MBS', '110168155'], ['OIB', '52072209280'], ['PDV identifikacijski broj', '[HR52072209280 — ako je društvo u sustavu PDV-a]'], ['Uprava', 'Snježana Cenić Stojaković, direktorica · Marko Obranović, direktor'], ['Temeljni kapital', '3.000,00 EUR, uplaćen u cijelosti'], ['Žiro račun', 'HR83 2360 0001 1033 1654 9, Zagrebačka banka d.d.'], ['E-pošta', 'info@terrapomalo.hr · terrapomalo@gmail.com'], ['Telefon i WhatsApp', '+385 95 881 7779 · +385 91 524 5676']] },
+      { id: 'placanje', title: 'Podaci za plaćanje', rows: [['Primatelj', 'TERRA POMALO d.o.o., Nova ulica 17, Žaborić, 22000 Šibenik'], ['Banka', 'Zagrebačka banka d.d. (UniCredit Group), Trg bana Josipa Jelačića 10, 10000 Zagreb'], ['Žiro račun (IBAN)', 'HR83 2360 0001 1033 1654 9'], ['SWIFT/BIC', 'ZABAHR2X'], ['Poziv na broj', 'Broj ugovora ili ponude']] },
+      { id: 'turisticka-agencija', title: 'Turistička agencija', rows: [['Identifikacijska oznaka (ID kod)', 'HR-AB-15-110168155'], ['Upis u Središnji registar turističkih agencija', 'Ministarstvo turizma i sporta, [datum upisa]'], ['Nadzor', 'Državni inspektorat Republike Hrvatske']] },
+      { id: 'zastita-putnika', title: 'Paket aranžmani i zaštita putnika', text: ['Prije sklapanja ugovora o paket aranžmanu škola i putnici dobivaju obrazac standardnih informacija i Opće uvjete poslovanja. Putnici imaju sva prava iz Zakona o pružanju usluga u turizmu, kojim je preuzeta Direktiva (EU) 2015/2302 o putovanjima u paket aranžmanu.'], rows: [['Jamstvo za slučaj nesolventnosti', '[Osiguravatelj ili banka, broj police ili jamstva, kontakt za putnike]'], ['Osiguranje od odgovornosti', '[Osiguravatelj, broj police]']], links: [{ label: 'Opći uvjeti poslovanja', page: 'terms' }] },
+      { id: 'prigovori', title: 'Prigovori', text: [`Pisani prigovor možete poslati poštom na adresu sjedišta (Nova ulica 17, Žaborić, 22000 Šibenik) ili e-poštom na ${EMAILS}. Primitak prigovora potvrđujemo bez odgode, a odgovor šaljemo najkasnije u roku od 15 dana od primitka.`, 'Ako spor ne riješimo sporazumno, možete se obratiti tijelu za alternativno rješavanje potrošačkih sporova s popisa koji vodi Ministarstvo gospodarstva ili nadležnom sudu. [Pristaje li društvo na alternativno rješavanje sporova; ako pristaje, navesti tijelo, npr. Centar za mirenje HGK]'] },
+      { id: 'privatnost', title: 'Zaštita osobnih podataka', text: ['Voditelj obrade je TERRA POMALO d.o.o. Kako obrađujemo osobne podatke i koja su vaša prava, opisano je na zasebnoj stranici.'], links: [{ label: 'Obrada i zaštita podataka', page: 'privacy' }] },
+      { id: 'fotografije', title: 'Autori fotografija', text: ['Dio fotografija preuzet je s Unsplasha uz Unsplash licencu. Zahvaljujemo autorima.'], credits: true },
+    ],
+  },
+
+  notFound: {
+    title: 'Stranica nije pronađena',
+    description: 'Adresa koju ste otvorili ne postoji ili je premještena.',
+    text: 'Adresa koju ste otvorili ne postoji ili je premještena. Pogledajte naše izlete ili se vratite na početnu stranicu.',
+    home: 'Na početnu',
+  },
+
+  trips,
+};

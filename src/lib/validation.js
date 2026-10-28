@@ -1,41 +1,32 @@
-// Jednostavna provjera obrazaca na klijentu. Svako pravilo vraća poruku greške ili null.
+// Provjera obrazaca na klijentu. Pravila primaju poruke iz rječnika (t.v) i vraćaju poruku greške ili null.
 
-export const rules = {
-  required: (msg = 'Ovo polje je obavezno.') => (v) =>
-    (typeof v === 'string' ? v.trim() : v) ? null : msg,
-  email: () => (v) =>
-    !v || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? null : 'Upišite ispravnu adresu e-pošte.',
-  phone: () => (v) =>
-    !v || /^\+?[0-9 ()/-]{8,20}$/.test(v.trim()) ? null : 'Upišite ispravan broj telefona (npr. +385 91 123 4567).',
+export const makeRules = (m) => ({
+  required: () => (v) => ((typeof v === 'string' ? v.trim() : v) ? null : m.required),
+  email: () => (v) => (!v || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? null : m.email),
+  phone: () => (v) => (!v || /^\+?[0-9 ()/-]{8,20}$/.test(v.trim()) ? null : m.phone),
   url: () => (v) => {
     if (!v) return null;
     try {
-      const u = new URL(v.trim());
-      return /^https?:$/.test(u.protocol) ? null : 'Poveznica mora počinjati s http:// ili https://';
+      return /^https?:$/.test(new URL(v.trim()).protocol) ? null : m.url;
     } catch {
-      return 'Upišite ispravnu poveznicu (npr. https://www.skola.hr/javni-poziv).';
+      return m.url;
     }
   },
   intRange: (min, max) => (v) => {
     if (v === '' || v == null) return null;
     const n = Number(v);
-    return Number.isInteger(n) && n >= min && n <= max ? null : `Upišite cijeli broj od ${min} do ${max}.`;
+    return Number.isInteger(n) && n >= min && n <= max ? null : m.range(min, max);
   },
   futureDate: () => (v) => {
     if (!v) return null;
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    return new Date(v) >= today ? null : 'Datum ne može biti u prošlosti.';
+    return new Date(v) >= today ? null : m.future;
   },
-  oib: () => (v) => (!v || isValidOib(v.trim()) ? null : 'OIB mora imati 11 znamenki i ispravnu kontrolnu znamenku.'),
-  checked: (msg = 'Potrebna je vaša privola.') => (v) => (v ? null : msg),
-  file: ({ types, maxMb }) => (f) => {
-    if (!f) return null;
-    if (types && !types.includes(f.type)) return 'Dopušteni su PDF ili DOC/DOCX dokumenti.';
-    if (maxMb && f.size > maxMb * 1024 * 1024) return `Datoteka smije imati najviše ${maxMb} MB.`;
-    return null;
-  },
-};
+  oib: () => (v) => (!v || isValidOib(v.trim()) ? null : m.oib),
+  checked: () => (v) => (v ? null : m.consent),
+  choice: () => (v) => (v ? null : m.choose),
+});
 
 // ISO 7064, MOD 11,10 – kontrolna znamenka OIB-a
 export function isValidOib(oib) {
@@ -46,8 +37,7 @@ export function isValidOib(oib) {
     if (a === 0) a = 10;
     a = (a * 2) % 11;
   }
-  const check = (11 - a) % 10;
-  return check === Number(oib[10]);
+  return (11 - a) % 10 === Number(oib[10]);
 }
 
 export function validate(values, schema) {
