@@ -18,8 +18,9 @@ Objava: `docs/objava.md`.
 
 - Tekst: `src/i18n/hr.js` i `src/i18n/en.js` (isti ključevi); programi `src/i18n/trips.hr.js` i `trips.en.js`.
 - Podaci programa (trajanje, uzrast, fotografija): `src/data/trips.js`. Podaci društva, kontakt, domena: `src/data/company.js`.
-- Adrese (`src/route.jsx`): `/`, `/izleti/<slug>/`, `/za-roditelje/`, `/suradnja/`, `/o-nama/`, `/opci-uvjeti/`,
-  `/zastita-podataka/`, `/pravne-informacije/`; EN `/en/…` (`trips`, `for-parents`, `partners`, `about`, `terms`, `privacy`, `legal`).
+- Adrese (`src/route.jsx`): `/`, `/izleti/<slug>/`, vrste putovanja `/skola-u-prirodi/`, `/jednodnevni-izleti/`, `/ekskurzije/`
+  (`src/data/categories.js`), `/za-nastavnike/`, `/sigurnosni-standard/`, `/za-roditelje/`, `/suradnja/`, `/o-nama/`, `/opci-uvjeti/`,
+  `/zastita-podataka/`, `/pravne-informacije/`; EN `/en/…` (`trips`, `outdoor-school`, `school-day-trips`, `study-tours`, `for-schools`, `safety-standard`, `for-parents`, `partners`, `about`, `terms`, `privacy`, `legal`).
 - Tekstualne stranice: `src/components/InfoPage.jsx` (`sections` s `text`, `rows`, `links`; `faq: true` = česta pitanja).
 - Obrasci: `src/mailto.js` (poslužitelj ili pričuva u programu za e-poštu), provjera u `src/lib/validation.js`.
 - SEO: `src/entry-server.jsx` (naslovi, opisi, JSON-LD: TravelAgency, TouristTrip, FAQPage, BreadcrumbList) i
@@ -31,4 +32,4 @@ Objava: `docs/objava.md`.
 
 Sve u [uglatim zagradama] čeka potvrdu: vidi se u razvoju i pregledu, a na objavljenoj stranici se izostavlja.
 Otvoreno: domena, rješenje o upisu (datum), PDV status, jamstvo i polica osiguranja, radno vrijeme, okvirne cijene,
-broj rata, gratis, članstvo u udruženju, alternativno rješavanje sporova, društvene mreže, fotografije za Zagreb i Beč.
+broj rata, gratis, pravilo o alkoholu (Sigurnosni standard), članstvo u udruženju, alternativno rješavanje sporova, društvene mreže, fotografije za Zagreb i Beč.

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { CategoryPage } from './components/CategoryPage.jsx';
 import { Footer } from './components/Footer.jsx';
 import { Hero } from './components/Hero.jsx';
 import { ParentsTeaser, PartnersTeaser } from './components/HomeTeasers.jsx';
@@ -8,6 +9,7 @@ import { TeachersSection } from './components/TeachersSection.jsx';
 import { NO_FILTERS, TripCatalogue } from './components/TripCatalogue.jsx';
 import { TripPage } from './components/TripPage.jsx';
 import { TrustSection } from './components/TrustSection.jsx';
+import { CATEGORIES } from './data/categories.js';
 import { TRIPS } from './data/trips.js';
 import { useT } from './i18n/index.jsx';
 import { useOffer } from './offer.jsx';
@@ -67,6 +69,10 @@ function Page() {
     const id = Object.keys(t.trips).find((k) => t.trips[k].slug === route.slug);
     const trip = id && TRIPS.find((x) => x.id === id);
     return trip ? <TripPage key={trip.id} trip={trip} /> : <NotFound />;
+  }
+  if (route.page === 'category') {
+    const cat = CATEGORIES.find((c) => c.slug[route.lang] === route.slug);
+    return cat ? <CategoryPage key={cat.id} category={cat} /> : <NotFound />;
   }
   if (route.page === 'legal') return <InfoPage page={t.legal} />;
   if (t.pages[route.page]) return <InfoPage key={route.page} page={t.pages[route.page]} />;

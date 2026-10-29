@@ -21,9 +21,14 @@ export function TrustSection() {
               <p className="text-sm text-brand-100">{s.ownerLabel}</p>
               <p className="mt-0.5 font-display text-xl font-bold">{OWNER.name}</p>
               <p className="mt-1 text-sm text-brand-100">{ADDRESS} · OIB {OWNER.oib} · ID {OWNER.idCode}</p>
-              <a href={href('about')} className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-amber-400 hover:text-amber-500">
-                {s.more} <ArrowRight className="h-4 w-4" />
-              </a>
+              <p className="mt-3 flex flex-wrap gap-x-5 gap-y-1">
+                <a href={href('safety')} className="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-400 hover:text-amber-500">
+                  {s.safety} <ArrowRight className="h-4 w-4" />
+                </a>
+                <a href={href('about')} className="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-400 hover:text-amber-500">
+                  {s.more} <ArrowRight className="h-4 w-4" />
+                </a>
+              </p>
             </div>
           </div>
         </div>

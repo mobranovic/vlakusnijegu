@@ -1,10 +1,12 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import { CATEGORIES } from './data/categories.js';
 
 /*
  * Adrese stranica
  *   /  ·  /en/                                   početna
  *   /izleti/<slug>/  ·  /en/trips/<slug>/        program
- *   /za-roditelje/ · /suradnja/ · /o-nama/ · /opci-uvjeti/ · /zastita-podataka/ · /pravne-informacije/
+ *   /skola-u-prirodi/ · /jednodnevni-izleti/ · /ekskurzije/  ·  /en/outdoor-school/ …   vrsta putovanja (src/data/categories.js)
+ *   /za-nastavnike/ · /sigurnosni-standard/ · /za-roditelje/ · /suradnja/ · /o-nama/ · /opci-uvjeti/ · /zastita-podataka/ · /pravne-informacije/
  *   /en/for-parents/ · /en/partners/ · /en/about/ · /en/terms/ · /en/privacy/ · /en/legal/
  *   /404.html · /en/404.html
  * Svaka adresa se pri izgradnji iscrtava u vlastiti index.html (scripts/prerender.mjs).
@@ -17,6 +19,8 @@ export const SHOW_PLACEHOLDERS = HASH_MODE || import.meta.env.DEV;
 
 const TRIP_DIR = { hr: 'izleti', en: 'trips' };
 export const PAGE_DIR = {
+  teachers: { hr: 'za-nastavnike', en: 'for-schools' },
+  safety: { hr: 'sigurnosni-standard', en: 'safety-standard' },
   parents: { hr: 'za-roditelje', en: 'for-parents' },
   partners: { hr: 'suradnja', en: 'partners' },
   about: { hr: 'o-nama', en: 'about' },
@@ -25,6 +29,7 @@ export const PAGE_DIR = {
   legal: { hr: 'pravne-informacije', en: 'legal' },
 };
 const pageOf = (dir) => Object.keys(PAGE_DIR).find((k) => Object.values(PAGE_DIR[k]).includes(dir));
+const categoryOf = (lang, dir) => CATEGORIES.find((c) => c.slug[lang] === dir);
 
 export function parseLocation({ pathname = '/', search = '', hash = '' }) {
   if (HASH_MODE) {
@@ -32,7 +37,10 @@ export function parseLocation({ pathname = '/', search = '', hash = '' }) {
     const [path, anchor] = hash.replace(/^#\/?/, '').split('#');
     const m = path.match(/^(?:izleti|trips)\/([^/]+)\/?$/);
     if (m) return { lang, page: 'trip', slug: decodeURIComponent(m[1]) };
-    const page = pageOf(path.replace(/\/$/, ''));
+    const dir = path.replace(/\/$/, '');
+    const cat = categoryOf(lang, dir) || categoryOf(lang === 'en' ? 'hr' : 'en', dir);
+    if (cat) return { lang, page: 'category', slug: cat.slug[lang] };
+    const page = pageOf(dir);
     return { lang, page: page || 'home', ...(anchor && { anchor }) };
   }
   const parts = pathname.split('/').filter(Boolean);
@@ -40,13 +48,14 @@ export function parseLocation({ pathname = '/', search = '', hash = '' }) {
   if (lang === 'en') parts.shift();
   if (parts[0] === TRIP_DIR[lang] && parts[1]) return { lang, page: 'trip', slug: parts[1] };
   if (parts.length === 1 && PAGE_DIR[pageOf(parts[0])]?.[lang] === parts[0]) return { lang, page: pageOf(parts[0]) };
+  if (parts.length === 1 && categoryOf(lang, parts[0])) return { lang, page: 'category', slug: parts[0] };
   if (parts.length === 0 || (parts.length === 1 && parts[0] === 'index.html')) return { lang, page: 'home' };
   return { lang, page: 'notfound' };
 }
 
 export function pathFor({ lang, page = 'home', slug }) {
   if (page === 'notfound') return lang === 'en' ? '/en/404.html' : '/404.html';
-  const sub = page === 'trip' ? `${TRIP_DIR[lang]}/${slug}` : PAGE_DIR[page]?.[lang] || '';
+  const sub = page === 'trip' ? `${TRIP_DIR[lang]}/${slug}` : page === 'category' ? slug : PAGE_DIR[page]?.[lang] || '';
   if (HASH_MODE) return `${lang === 'en' ? '?lang=en' : '?'}#/${sub}`;
   const root = lang === 'en' ? '/en/' : '/';
   return sub ? `${root}${sub}/` : root;

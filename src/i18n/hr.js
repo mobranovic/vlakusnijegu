@@ -54,7 +54,7 @@ export default {
   nav: [
     { label: 'Jednodnevni izleti', section: 'trips', filter: 'jednodnevni' },
     { label: 'Višednevna putovanja', section: 'trips', filter: 'visednevni' },
-    { label: 'Za nastavnike', section: 'teachers' },
+    { label: 'Za nastavnike', page: 'teachers' },
     { label: 'Za roditelje', page: 'parents' },
     { label: 'Suradnja', page: 'partners' },
     { label: 'O nama', page: 'about' },
@@ -125,6 +125,7 @@ export default {
     formTitle: 'Pošaljite javni poziv',
     formText: 'Upišite poveznicu na objavljeni javni poziv. Ponudu dostavljamo u roku navedenom u pozivu.',
     bullets: ['Ponuda na obrascu iz javnog poziva', 'Dokaz o upisu u registar turističkih agencija i o jamstvu', 'Predstavljanje na roditeljskom sastanku'],
+    more: 'Paket za razrednika, kalendar i dokumenti',
   },
 
   parentsTeaser: {
@@ -151,6 +152,7 @@ export default {
       { title: 'Koordinator 0–24 h', text: 'Tijekom putovanja nastavnici imaju izravan broj dežurnog koordinatora: +385 95 881 7779.' },
     ],
     more: 'Više o nama',
+    safety: 'Naš sigurnosni standard',
   },
 
   partnersTeaser: {
@@ -249,6 +251,7 @@ export default {
       ['Tijekom putovanja', '0 – 24 h'],
     ],
     links: 'Brze poveznice',
+    programs: 'Putovanja',
     company: 'Organizator putovanja',
     idCode: 'ID kod',
     board: 'Uprava',
@@ -264,7 +267,60 @@ export default {
     ],
   },
 
+  // Stranice po vrsti putovanja (src/data/categories.js)
+  categories: {
+    'skola-u-prirodi': {
+      title: 'Škola u prirodi',
+      seoTitle: 'Škola u prirodi za 3. i 4. razred – programi i ponuda',
+      description: 'Škola u prirodi za učenike razredne nastave: Gorski kotar, Plitvička jezera i Lika. Program povezan s prirodom i društvom, smještaj, radionice i koordinator 0–24 h.',
+      intro: 'Škola u prirodi je za mnoge učenike prvo putovanje bez roditelja. Biramo krajeve u kojima djeca uče vani: šume, izvore, jezera i životinje, uz radionice, sport i večernji program.',
+      points: ['Program povezan s nastavom prirode i društva', 'Smještaj u domovima i hostelima za školske grupe', 'Animatori i voditelji radionica', 'Plaćanje u ratama'],
+    },
+    jednodnevni: {
+      title: 'Jednodnevni izleti',
+      seoTitle: 'Jednodnevni školski izleti – Zagreb, Varaždin, Trakošćan',
+      description: 'Jednodnevni školski izleti za osnovne i srednje škole: Zagreb, Varaždin i Trakošćan. Vodič, ulaznice, ručak i osiguranje uključeni.',
+      intro: 'Jednodnevni izlet je najjednostavniji način da razred upozna novi kraj. Satnicu prilagođavamo mjestu škole, a vodiči priču prilagođavaju dobi učenika.',
+      points: ['Polazak i povratak isti dan', 'Licencirani vodiči i ulaznice', 'Ručak u provjerenom restoranu', 'Osiguranje od nesretnog slučaja'],
+    },
+    ekskurzije: {
+      title: 'Ekskurzije',
+      seoTitle: 'Školske ekskurzije – Istra, Plitvice, Beč i Budimpešta',
+      description: 'Višednevne školske ekskurzije za predmetnu nastavu i srednje škole: Istra i Brijuni, Lika i Plitvice, Beč i Budimpešta. Ponude na javni poziv škole.',
+      intro: 'Ekskurzija spaja povijest, prirodu i druženje u nekoliko dana. Svaki program ima satnicu po danima, povezanost s predmetima i voditelja putovanja uz koordinatora 0–24 h.',
+      points: ['Ponuda na obrascu iz javnog poziva', 'Smještaj u hotelima i hostelima', 'Voditelj putovanja i koordinator 0–24 h', 'Plaćanje u ratama'],
+    },
+  },
+  categoryUi: { programs: 'Programi', custom: 'Ne vidite odredište koje tražite? Pripremit ćemo program po mjeri vašeg razreda.', all: 'Svi programi' },
+
   pages: {
+
+    teachers: {
+      title: 'Za nastavnike',
+      description: 'Paket za razrednika, kalendar školskog putovanja prema Pravilniku i dokumenti koje agencija Veliki odmor dostavlja uz ponudu na javni poziv.',
+      intro: 'Putovanje traži puno papirologije. Dio posla preuzimamo mi: uz svaku ponudu dobivate gotove materijale, a ovdje su i rokovi koje treba pratiti.',
+      sections: [
+        { id: 'paket', title: 'Paket za razrednika', text: ['Uz svaku ponudu besplatno dobivate materijale koje prilagođavate svojoj školi:'], items: ['Prijedlog ciljeva i ishoda za školski kurikulum, povezan s predmetima programa', 'Obavijest roditeljima i obrazac suglasnosti za putovanje', 'Prezentacija programa za roditeljski sastanak (do 5 minuta) i sažetak na jednoj stranici', 'Popis za pakiranje i pravila ponašanja za učenike', 'Predložak izvješća nakon putovanja'], after: ['Tekst javnog poziva i uvjete ponude piše škola. Mi ih ne pripremamo, kako bi postupak ostao jednak za sve ponuditelje.'] },
+        { id: 'kalendar', title: 'Kalendar putovanja', text: ['Za školu u prirodi u svibnju javni poziv treba objaviti najkasnije u veljači.'], rows: [['Rujan i listopad', 'Putovanje se uvrštava u školski kurikulum i godišnji plan i program rada škole'], ['Najkasnije 3 mjeseca prije putovanja', 'Škola objavljuje javni poziv; rok za ponude je najmanje 8 radnih dana'], ['Nakon isteka roka', 'Povjerenstvo otvara ponude i bira one koje se predstavljaju roditeljima'], ['Roditeljski sastanak', 'Agencije predstavljaju programe, a roditelji biraju ponudu'], ['Nakon odabira', 'Ugovor sa školom, prijave i suglasnosti, plan uplata'], ['Tjedan prije polaska', 'Konačna satnica, popis putnika i obavijest roditeljima'], ['Nakon povratka', 'Izvješće voditelja putovanja']], after: ['Sažetak Pravilnika (NN 67/14, 81/15, 53/21); mjerodavan je važeći tekst.'] },
+        { id: 'dokumenti', title: 'Što dostavljamo uz ponudu', items: ['Ponudu na obrascu iz javnog poziva', 'Dokaz o upisu u sudski registar', 'Dokaz o upisu u registar turističkih agencija (ID kod HR-AB-15-110168155)', 'Dokaz o jamstvu za slučaj nesolventnosti', 'Policu osiguranja od odgovornosti', 'Ostale dokumente koje javni poziv traži'] },
+        { id: 'sigurnost', title: 'Sigurnost', text: ['Pravila kojih se držimo na svakom putovanju opisana su u našem sigurnosnom standardu.'], links: [{ label: 'Sigurnosni standard', page: 'safety' }, { label: 'Odgovori za roditelje', page: 'parents' }] },
+      ],
+      form: 'call',
+    },
+
+    safety: {
+      title: 'Sigurnosni standard',
+      description: 'Sigurnosni standard agencije Veliki odmor za školska putovanja: prijevoz, smještaj, prehrana i zdravlje, nadzor, koordinator 0–24 h i obavijesti školi.',
+      intro: 'Ovo su pravila kojih se držimo na svakom školskom putovanju. Pojedinosti dogovaramo sa školom prije polaska i navodimo ih u ugovoru.',
+      sections: [
+        { id: 'prijevoz', title: 'Prijevoz', items: ['Prijevoznici registrirani za prijevoz putnika, s turističkim autobusima', 'Vozači poštuju propisano vrijeme vožnje i odmora, a na duljim relacijama voze dva vozača', 'Škola može prije polaska zatražiti od policije pregled autobusa'] },
+        { id: 'smjestaj', title: 'Smještaj i nadzor', items: ['Smještaj biramo prema dobi učenika, u objektima koji primaju školske grupe', 'Raspored po sobama i noćni nadzor dogovaramo sa školom i smještajem prije polaska', 'Pratitelji su smješteni u blizini učenika'] },
+        { id: 'zdravlje', title: 'Prehrana i zdravlje', items: ['Alergije i posebnu prehranu usklađujemo sa smještajem i restoranima prije polaska', 'Osiguranje od nesretnog slučaja uključeno je u svaki program, a za inozemstvo i putno zdravstveno osiguranje', 'Pri bolesti ili ozljedi voditelj putovanja i pratitelji odmah organiziraju liječničku pomoć i obavještavaju roditelje'] },
+        { id: 'komunikacija', title: 'Voditelj, koordinator i obavijesti', items: ['Voditelj putovanja brine o organizaciji na terenu', 'Nastavnici imaju izravan broj dežurnog koordinatora 0–24 h: +385 95 881 7779', 'Školi javljamo dolazak na odredište i polazak natrag'] },
+        { id: 'alkohol', title: 'Alkohol i pravila ponašanja', text: ['[Na putovanjima maloljetnih učenika ne organiziramo posjete noćnim klubovima ni programe uz alkohol. Pravila ponašanja dogovaramo sa školom i roditeljima prije polaska. – potvrditi pravilo, posebno za maturalna putovanja]'] },
+      ],
+      links: [{ label: 'Odgovori za roditelje', page: 'parents' }],
+    },
     parents: {
       title: 'Za roditelje',
       description: 'Odgovori za roditelje: nadzor učenika, smještaj, prehrana i alergije, zdravlje i osiguranje, prijevoz, mobiteli, džeparac i plaćanje u ratama.',

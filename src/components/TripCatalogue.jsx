@@ -1,5 +1,7 @@
 import { RotateCcw, SearchX, SlidersHorizontal } from 'lucide-react';
+import { CATEGORIES } from '../data/categories.js';
 import { TRIPS } from '../data/trips.js';
+import { useRoute } from '../route.jsx';
 import { useT } from '../i18n/index.jsx';
 import { TripCard } from './TripCard.jsx';
 import { Button } from './ui/Button.jsx';
@@ -27,6 +29,7 @@ function Chip({ active, children, ...props }) {
 
 export function TripCatalogue({ filters, setFilters, onCustom }) {
   const t = useT();
+  const { href } = useRoute();
   const c = t.catalogue;
   const results = filterTrips(filters);
   const active = Object.values(filters).some(Boolean);
@@ -41,6 +44,13 @@ export function TripCatalogue({ filters, setFilters, onCustom }) {
     <section id={t.ids.trips} className="scroll-mt-20 bg-ice-100 py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader eyebrow={c.eyebrow} title={c.title}>{c.text}</SectionHeader>
+        <p className="mt-5 flex flex-wrap gap-2">
+          {CATEGORIES.map((cat) => (
+            <a key={cat.id} href={href('category', { slug: cat.slug[t.meta.lang] })} className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-brand-700 shadow-card hover:bg-brand-50">
+              {t.categories[cat.id].title}
+            </a>
+          ))}
+        </p>
 
         <div className="mt-8 rounded-2xl bg-white p-4 shadow-card sm:p-5">
           <div className="flex items-center gap-2 text-sm font-semibold text-brand-900">

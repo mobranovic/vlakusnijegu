@@ -1,4 +1,5 @@
 import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { CATEGORIES } from '../data/categories.js';
 import { ADDRESS, EMAILS, MAP_URL, OWNER, PHONES, SOCIAL, TERRA_POMALO_URL } from '../data/company.js';
 import { useT } from '../i18n/index.jsx';
 import { ph, visible } from '../lib/placeholders.js';
@@ -67,9 +68,15 @@ export function Footer() {
         </div>
 
         <div className="min-w-0">
-          <h2 className="font-semibold text-white">{f.links}</h2>
+          <h2 className="font-semibold text-white">{f.programs}</h2>
           <ul className="mt-4 space-y-2 text-sm">
-            {t.nav.filter((n) => !n.contact).map((item) => (
+            {CATEGORIES.map((c) => (
+              <li key={c.id}><a href={href('category', { slug: c.slug[t.meta.lang] })} className="hover:text-white">{t.categories[c.id].title}</a></li>
+            ))}
+          </ul>
+          <h2 className="mt-6 font-semibold text-white">{f.links}</h2>
+          <ul className="mt-4 space-y-2 text-sm">
+            {t.nav.filter((n) => !n.contact && !n.filter).map((item) => (
               <li key={item.label}><a {...navLink(item)} className="hover:text-white">{item.label}</a></li>
             ))}
             {f.legalLinks.map((l) => <li key={l.page}><a href={href(l.page)} className="hover:text-white">{l.label}</a></li>)}

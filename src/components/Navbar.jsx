@@ -1,5 +1,6 @@
 import { Globe, Menu, Send, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { CATEGORIES } from '../data/categories.js';
 import { DICTIONARIES, useT } from '../i18n/index.jsx';
 import { useOffer } from '../offer.jsx';
 import { scrollToId, useRoute } from '../route.jsx';
@@ -14,6 +15,10 @@ export function useAltHref() {
   if (route.page === 'trip') {
     const id = Object.keys(t.trips).find((k) => t.trips[k].slug === route.slug);
     return id ? route.href('trip', { lang: other, slug: DICTIONARIES[other].trips[id].slug }) : route.href('home', { lang: other });
+  }
+  if (route.page === 'category') {
+    const cat = CATEGORIES.find((c) => c.slug[route.lang] === route.slug);
+    return cat ? route.href('category', { lang: other, slug: cat.slug[other] }) : route.href('home', { lang: other });
   }
   return route.href(route.page === 'notfound' ? 'home' : route.page, { lang: other });
 }

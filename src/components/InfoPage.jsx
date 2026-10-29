@@ -3,7 +3,9 @@ import { PHOTO_CREDITS } from '../data/company.js';
 import { useT } from '../i18n/index.jsx';
 import { ph, visible } from '../lib/placeholders.js';
 import { useRoute } from '../route.jsx';
+import { InquiryForm } from './InquiryForm.jsx';
 import { PartnerForm } from './PartnerForm.jsx';
+import { PublicCallForm } from './TeachersSection.jsx';
 import { Photo } from './ui/Photo.jsx';
 
 function Links({ links }) {
@@ -39,11 +41,20 @@ function Credits() {
   );
 }
 
+/** Ima li odjeljak išta za prikaz (odjeljak samo od rezerviranih mjesta na objavljenoj se stranici izostavlja). */
+const hasContent = (s) => [...(s.text || []), ...(s.items || []), ...(s.after || [])].some(visible) || (s.rows || []).some(([, v]) => visible(v)) || s.links || s.credits;
+
 function SectionBody({ s }) {
   const rows = (s.rows || []).filter(([, v]) => visible(v));
+  const items = (s.items || []).filter(visible);
   return (
     <>
       {(s.text || []).filter(visible).map((p) => <p key={p} className="mt-3 text-slate-700">{ph(p)}</p>)}
+      {items.length > 0 && (
+        <ul className="mt-3 list-disc space-y-1.5 pl-5 text-slate-700 marker:text-amber-500">
+          {items.map((i) => <li key={i}>{ph(i)}</li>)}
+        </ul>
+      )}
       {rows.length > 0 && (
         <dl className="mt-4 divide-y divide-slate-100 rounded-2xl bg-white ring-1 ring-slate-200">
           {rows.map(([k, v]) => (
@@ -54,6 +65,7 @@ function SectionBody({ s }) {
           ))}
         </dl>
       )}
+      {(s.after || []).filter(visible).map((p) => <p key={p} className="mt-3 text-sm text-slate-500">{ph(p)}</p>)}
       {s.links && <Links links={s.links} />}
       {s.credits && <Credits />}
     </>
@@ -74,7 +86,7 @@ export function InfoPage({ page }) {
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-14">
         {page.faq ? (
           <div className="space-y-3">
-            {page.sections.map((s) => (
+            {page.sections.filter(hasContent).map((s) => (
               <details key={s.id} id={s.id} className="group scroll-mt-24 rounded-2xl bg-white p-5 shadow-card open:ring-1 open:ring-brand-200">
                 <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-semibold text-brand-900">
                   <h2 className="text-base sm:text-lg">{s.title}</h2>
@@ -87,18 +99,21 @@ export function InfoPage({ page }) {
           </div>
         ) : (
           <div className="space-y-10">
-            {page.sections.map((s) => (
+            {page.sections.filter(hasContent).map((s) => (
               <section key={s.id} id={s.id} className="scroll-mt-24">
                 <h2 className="font-display text-2xl font-bold text-brand-900">{s.title}</h2>
                 <SectionBody s={s} />
               </section>
             ))}
+            {page.links && <Links links={page.links} />}
           </div>
         )}
         {page.form && (
           <section id="obrazac" className="mt-12 scroll-mt-24 rounded-3xl bg-white p-5 shadow-card sm:p-8">
-            <h2 className="font-display text-2xl font-bold text-brand-900">{t.forms.partnerTitle}</h2>
-            <div className="mt-5"><PartnerForm /></div>
+            <h2 className="font-display text-2xl font-bold text-brand-900">
+              {page.form === 'call' || page.form === 'inquiry' ? t.teachers.formTitle : t.forms.partnerTitle}
+            </h2>
+            <div className="mt-5">{page.form === 'call' ? <PublicCallForm /> : page.form === 'inquiry' ? <InquiryForm /> : <PartnerForm />}</div>
           </section>
         )}
       </div>

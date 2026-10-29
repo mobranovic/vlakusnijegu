@@ -1,5 +1,6 @@
-import { ClipboardList, FileSignature, Gavel, Loader2, Megaphone, Send, Users, Vote } from 'lucide-react';
+import { ArrowRight, ClipboardList, FileSignature, Gavel, Loader2, Megaphone, Send, Users, Vote } from 'lucide-react';
 import { useT } from '../i18n/index.jsx';
+import { useRoute } from '../route.jsx';
 import { toLines, useForm } from '../lib/useForm.js';
 import { makeRules } from '../lib/validation.js';
 import { submitForm } from '../mailto.js';
@@ -13,7 +14,7 @@ const ICONS = [ClipboardList, Users, Megaphone, Gavel, Vote, FileSignature];
 const INITIAL = { school: '', oib: '', city: '', contact: '', email: '', phone: '', callNumber: '', link: '', deadline: '', note: '', consent: false };
 
 // Javni poziv škole (Pravilnik o izvođenju izleta, ekskurzija i drugih odgojno-obrazovnih aktivnosti izvan škole)
-function PublicCallForm() {
+export function PublicCallForm() {
   const t = useT();
   const f = t.forms;
   const r = makeRules(t.v);
@@ -84,6 +85,7 @@ function PublicCallForm() {
 export function TeachersSection() {
   const t = useT();
   const s = t.teachers;
+  const { href } = useRoute();
   return (
     <section id={t.ids.teachers} className="scroll-mt-20 bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -105,6 +107,9 @@ export function TeachersSection() {
           })}
         </ol>
         <p className="mt-5 max-w-3xl text-sm text-slate-500">{s.note}</p>
+        <a href={href('teachers')} className="mt-4 inline-flex items-center gap-2 font-semibold text-brand-700 hover:text-brand-600">
+          {s.more} <ArrowRight className="h-4 w-4" />
+        </a>
 
         <div className="mt-12 grid gap-8 rounded-3xl bg-ice-100 p-5 sm:p-8 lg:grid-cols-[1fr_1.6fr] lg:p-10">
           <div>

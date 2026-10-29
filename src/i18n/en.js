@@ -53,7 +53,7 @@ export default {
   nav: [
     { label: 'Day trips', section: 'trips', filter: 'jednodnevni' },
     { label: 'Multi-day trips', section: 'trips', filter: 'visednevni' },
-    { label: 'For schools', section: 'teachers' },
+    { label: 'For schools', page: 'teachers' },
     { label: 'For parents', page: 'parents' },
     { label: 'Partners', page: 'partners' },
     { label: 'About', page: 'about' },
@@ -124,6 +124,7 @@ export default {
     formTitle: 'Request a proposal',
     formText: 'Send us the basics and we will reply with a programme proposal for your group.',
     bullets: ['Registered Croatian travel agency', 'Insolvency protection for package travel', 'One contact person from enquiry to return'],
+    more: 'Teacher pack and booking timeline',
   },
 
   parentsTeaser: {
@@ -150,6 +151,7 @@ export default {
       { title: '24/7 coordinator', text: 'During the trip, teachers have a direct number for the coordinator on duty: +385 95 881 7779.' },
     ],
     more: 'More about us',
+    safety: 'Our safety standard',
   },
 
   partnersTeaser: {
@@ -246,6 +248,7 @@ export default {
       ['During trips', '24/7'],
     ],
     links: 'Quick links',
+    programs: 'Trips',
     company: 'Tour organiser',
     idCode: 'ID code',
     board: 'Management',
@@ -261,7 +264,59 @@ export default {
     ],
   },
 
+  categories: {
+    'skola-u-prirodi': {
+      title: 'Outdoor school',
+      seoTitle: 'Outdoor school programmes in Croatia for primary pupils',
+      description: 'Outdoor school in Croatia for pupils aged 7 to 10: Gorski kotar, Plitvice Lakes and Lika. Nature workshops, accommodation for school groups and a 24/7 coordinator.',
+      intro: 'For many pupils, outdoor school is their first trip without parents. We choose places where children learn outside: forests, springs, lakes and wildlife, with workshops, sport and evening activities.',
+      points: ['Linked to science and society lessons', 'Student residences and hostels used to school groups', 'Activity leaders and workshop staff', 'Pay in instalments'],
+    },
+    jednodnevni: {
+      title: 'School day trips',
+      seoTitle: 'School day trips in Croatia – Zagreb, Varaždin, Trakošćan',
+      description: 'School day trips in Croatia for primary and secondary schools: Zagreb, Varaždin and Trakošćan Castle. Guide, tickets, lunch and insurance included.',
+      intro: 'A day trip is the simplest way for a class to discover a new place. We set the timetable around your departure point, and guides adapt the story to the pupils’ age.',
+      points: ['There and back in a day', 'Licensed guides and tickets', 'Lunch at a trusted restaurant', 'Accident insurance'],
+    },
+    ekskurzije: {
+      title: 'Study tours',
+      seoTitle: 'School study tours – Istria, Plitvice, Vienna and Budapest',
+      description: 'Multi-day school study tours for pupils aged 11 to 18: Istria and Brijuni, Lika and Plitvice Lakes, Vienna and Budapest.',
+      intro: 'A study tour brings history, nature and friendship together over a few days. Every programme has a day-by-day timetable, curriculum links and a tour leader backed by a 24/7 coordinator.',
+      points: ['Day-by-day programme and curriculum links', 'Hotels and hostels for school groups', 'Tour leader and 24/7 coordinator', 'Pay in instalments'],
+    },
+  },
+  categoryUi: { programs: 'Programmes', custom: 'Not seeing the destination you want? We will put together a programme for your class.', all: 'All programmes' },
+
   pages: {
+
+    teachers: {
+      title: 'For schools',
+      description: 'Teacher pack, booking timeline and documents for school groups booking a trip in Croatia with Veliki odmor.',
+      intro: 'A school trip takes a lot of paperwork. We take part of it off your hands: every proposal comes with ready-made materials, and here is the timeline to follow.',
+      sections: [
+        { id: 'pack', title: 'Teacher pack', text: ['Every proposal comes with free materials you adapt for your school:'], items: ['Learning objectives linked to the programme’s subjects', 'Letter to parents and consent form', 'A five-minute presentation for the parents’ meeting and a one-page summary', 'Packing list and code of conduct for pupils', 'Template for the post-trip report'] },
+        { id: 'timeline', title: 'Booking timeline', rows: [['6 – 9 months before', 'Enquiry, programme proposal and adjustments'], ['4 – 6 months before', 'Contract, standard information form and deposit'], ['1 month before', 'Rooming list, special needs and final payment'], ['1 week before', 'Final timetable and information for parents'], ['After the trip', 'Photos, pupils’ tasks and feedback for your report']], after: ['[Booking deadlines and payment schedule to be confirmed in the terms]'] },
+        { id: 'documents', title: 'Documents we provide', items: ['Proposal with the day-by-day programme and price per pupil', 'Standard information form for package travel', 'Proof of registration as a Croatian travel agency (ID code HR-AB-15-110168155)', 'Proof of insolvency protection and liability insurance'] },
+        { id: 'safety', title: 'Safety', text: ['The rules we follow on every trip are set out in our safety standard.'], links: [{ label: 'Safety standard', page: 'safety' }, { label: 'Answers for parents', page: 'parents' }] },
+      ],
+      form: 'inquiry',
+    },
+
+    safety: {
+      title: 'Safety standard',
+      description: 'The Veliki odmor safety standard for school trips: transport, accommodation, diets and health, supervision, 24/7 coordinator and updates for the school.',
+      intro: 'These are the rules we follow on every school trip. Details are agreed with the school before departure and set out in the contract.',
+      sections: [
+        { id: 'transport', title: 'Transport', items: ['Operators licensed for passenger transport, with touring coaches', 'Drivers keep to the legal driving and rest times; longer routes have two drivers', 'Croatian schools can ask the police to inspect the coach before departure'] },
+        { id: 'accommodation', title: 'Accommodation and supervision', items: ['Accommodation chosen by age, in places used to school groups', 'Rooming and night supervision agreed with the school and the accommodation before departure', 'Teachers stay close to the pupils'] },
+        { id: 'health', title: 'Diets and health', items: ['Allergies and special diets arranged with accommodation and restaurants before departure', 'Accident insurance in every programme; trips abroad also include travel health insurance', 'If a pupil falls ill or is injured, the tour leader and teachers arrange medical help at once and inform the parents'] },
+        { id: 'contact', title: 'Tour leader, coordinator and updates', items: ['A tour leader handles the logistics on the ground', 'Teachers have a direct number for the coordinator on duty, 24/7: +385 95 881 7779', 'We let the school know when the group arrives and when it sets off home'] },
+        { id: 'alcohol', title: 'Alcohol and conduct', text: ['[On trips for minors we do not organise nightclub visits or activities involving alcohol. Rules of conduct are agreed with the school and parents before departure. – to be confirmed]'] },
+      ],
+      links: [{ label: 'Answers for parents', page: 'parents' }],
+    },
     parents: {
       title: 'For parents',
       description: 'Answers for parents: supervision, accommodation, diets and allergies, health and insurance, transport, phones, pocket money and paying in instalments.',

@@ -3,6 +3,7 @@ import Root from './Root.jsx';
 import { DICTIONARIES } from './i18n/index.jsx';
 import { pathFor } from './route.jsx';
 import { TRIPS } from './data/trips.js';
+import { CATEGORIES } from './data/categories.js';
 import { BRAND, EMAILS, OWNER, PHONES, SITE_URL, SOCIAL, TERRA_POMALO_URL } from './data/company.js';
 import { formatDuration } from './lib/format.js';
 export { SITE_URL } from './data/company.js';
@@ -91,6 +92,19 @@ function faq(t) {
   ];
 }
 
+/** Vrsta putovanja: popis programa (ItemList). */
+function category(t, c, path) {
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: t.categories[c.id].title,
+      url: abs(path),
+      itemListElement: c.trips.map((id, i) => ({ '@type': 'ListItem', position: i + 1, name: t.trips[id].title, url: abs(pathFor({ lang: t.meta.lang, page: 'trip', slug: t.trips[id].slug })) })),
+    },
+  ];
+}
+
 /** Sve stranice koje se unaprijed iscrtavaju, s naslovom, opisom, slikom za dijeljenje i strukturiranim podacima. */
 export function pages() {
   const list = [];
@@ -98,10 +112,14 @@ export function pages() {
     const t = DICTIONARIES[lang];
     const suffix = ` – ${BRAND}`;
     list.push({ route: { lang, page: 'home' }, title: t.meta.homeTitle, description: t.meta.homeDescription, ld: (path) => home(t, path) });
-    for (const p of ['parents', 'partners', 'about', 'terms', 'privacy'])
+    for (const p of ['teachers', 'safety', 'parents', 'partners', 'about', 'terms', 'privacy'])
       list.push({ route: { lang, page: p }, title: t.pages[p].title + suffix, description: t.pages[p].description, ...(p === 'parents' && { ld: () => faq(t) }) });
     list.push({ route: { lang, page: 'legal' }, title: t.legal.title + suffix, description: t.legal.description });
     list.push({ route: { lang, page: 'notfound' }, title: t.notFound.title + suffix, description: t.notFound.description, noindex: true });
+    for (const c of CATEGORIES) {
+      const text = t.categories[c.id];
+      list.push({ route: { lang, page: 'category', slug: c.slug[lang] }, key: `category/${c.id}`, title: text.seoTitle, description: text.description, image: `images/${c.og}.jpg`, ld: (path) => category(t, c, path) });
+    }
     for (const x of TRIPS) {
       const text = t.trips[x.id];
       list.push({
