@@ -31,7 +31,7 @@ SEARCH_TERMS = ['javni poziv', 'odabir', 'ponistenje', 'ekskurzija', 'skola u pr
 
 # Riječi po kojima je dokument o školskom putovanju (bez dijakritičkih znakova, malim slovima)
 TRIP_WORDS = ['izlet', 'ekskurz', 'skola u prirodi', 'skola-u-prirodi', 'izvanucion', 'maturaln', 'terensk', 'visednevn', 'putovanj', 'javni poziv', 'javni-poziv', 'javnog poziva', 'javnog-poziva', 'jp ', 'jp-']
-NOT_TRIP = ['natjecaj', 'zaposl', 'radno mjesto', 'radnog mjesta', 'nabav', 'udzbenik', 'prehran', 'kuhar']
+NOT_TRIP = ['natjecaj', 'pomocni', 'kandidat', 'zaposl', 'radno mjesto', 'radnog mjesta', 'nabav', 'udzbenik', 'prehran', 'kuhar']
 KINDS = [
     ('ponistenje', ['ponist']),
     ('odabir', ['odabir', 'odabran', 'odluka o izboru', 'ishod']),

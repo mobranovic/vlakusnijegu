@@ -31,6 +31,7 @@ class Test(unittest.TestCase):
         self.assertEqual(pozivi.classify('Poništenje javnog poziva', 'x.pdf')[0], 'ponistenje')
         self.assertIsNone(pozivi.classify('Natječaj za radno mjesto', 'x.pdf'))
         self.assertIsNone(pozivi.classify('Jelovnik', 'x.pdf'))
+        self.assertIsNone(pozivi.classify('Javni poziv za prijavu kandidata – pomoćnik u nastavi', 'x.pdf'))
 
     def test_run_reports_only_new(self):
         with tempfile.TemporaryDirectory() as d:
