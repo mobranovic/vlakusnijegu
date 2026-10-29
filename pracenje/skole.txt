@@ -1,0 +1,32 @@
+# Škole koje se prate: jedna adresa po retku. Popis dopunite školama iz ciljanih regija
+# (adresu škole naći ćete na www.skole.hr ili u njezinim javnim pozivima). Početni popis: škole iz analize tržišta.
+https://os-akovacica-mgorica.skole.hr
+https://os-ifilipovica-zg.skole.hr
+https://os-koprivnicki-bregi.skole.hr
+https://os-ljmodeca-kc.skole.hr
+https://os-ibmazuranic-orahovica.skole.hr
+https://os-cazma.skole.hr
+https://os-mitnica-vu.skole.hr
+https://os-trstenik-st.skole.hr
+https://os-dugopolje.skole.hr
+https://os-amohorovicica-matulji.skole.hr
+https://os-ostrog-kastelluksic.skole.hr
+https://os-donja-dubrava.skole.hr
+https://os-braca-radic-koprivnica.skole.hr
+https://os-acesarec-ivankovo.skole.hr
+https://os-meterize-si.skole.hr
+https://os-iperkovca-senkovec.skole.hr
+https://os-slatine.skole.hr
+https://os-gradac.skole.hr
+https://os-mejasi-st.skole.hr
+https://os-lipik.skole.hr
+https://gimnazija-treca-os.skole.hr
+https://gimnazija-vnazora-zd.skole.hr
+https://ss-treca-ekonomska-zg.skole.hr
+https://ss-tehnicka-zd.skole.hr
+https://ss-ekonomska-si.skole.hr
+https://ss-elektrotehnicka-ri.skole.hr
+https://ss-medicinska-akuzmanic-zd.skole.hr
+https://ss-primijenjenaumjetnost-ri.skole.hr
+https://ss-donji-miholjac.skole.hr
+https://uciliste-ugostiteljsko-turisticko-zg.skole.hr

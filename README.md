@@ -33,3 +33,9 @@ Objava: `docs/objava.md`.
 Sve u [uglatim zagradama] čeka potvrdu: vidi se u razvoju i pregledu, a na objavljenoj stranici se izostavlja.
 Otvoreno: domena, rješenje o upisu (datum), PDV status, jamstvo i polica osiguranja, radno vrijeme, okvirne cijene,
 broj rata, gratis, pravilo o alkoholu (Sigurnosni standard), članstvo u udruženju, alternativno rješavanje sporova, društvene mreže, fotografije za Zagreb i Beč.
+
+## Materijali i praćenje
+
+- `materijali/paket-za-razrednika/` – paket za razrednika (Word i PowerPoint), generira ga `scripts/paket.py`
+  iz podataka programa: `node scripts/export-trips.mjs > /tmp/trips.json && python3 scripts/paket.py /tmp/trips.json`.
+- `pracenje/` – svakodnevno praćenje javnih poziva škola (`scripts/pracenje/pozivi.py`, GitHub Actions), vidi `pracenje/README.md`.

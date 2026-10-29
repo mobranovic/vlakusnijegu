@@ -1,0 +1,26 @@
+# Svaki dan provjerava javne pozive škola iz pracenje/skole.txt i sprema izvješće u pracenje/izvjesce.md.
+# Pokreće se i ručno: Actions → Praćenje javnih poziva → Run workflow.
+name: Praćenje javnih poziva
+on:
+  schedule:
+    - cron: '17 5 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  pozivi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 -m unittest scripts/pracenje/test_pozivi.py
+      - run: python3 scripts/pracenje/pozivi.py
+      - name: Spremi izvješće
+        run: |
+          git config user.name "pracenje-poziva"
+          git config user.email "actions@users.noreply.github.com"
+          git add pracenje/
+          git diff --cached --quiet || git commit -m "Praćenje javnih poziva: $(date -u +%Y-%m-%d)"
+          git push
