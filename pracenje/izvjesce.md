@@ -1,82 +1,41 @@
 # Javni pozivi škola – novo od prošle provjere
 
-Provjereno 29. 10. 2026. u 08:29 UTC · škola: 30 · razdoblje: zadnjih 45 dana · novih dokumenata: 53
+Provjereno 30. 10. 2026. u 05:53 UTC · škola: 30 · razdoblje: zadnjih 45 dana · novih dokumenata: 10
 
-## Novi javni pozivi – pripremiti ponudu (32)
-
-| Datum | Škola | Vrsta | Dokument |
-| --- | --- | --- | --- |
-| 2026-10-28 | ss-medicinska-akuzmanic-zd.skole.hr | ekskurzija | [Javni poziv za prikupljanje ponuda za organizaciju višednevne izvanučioničke nastave (broj poziva 3/26)](https://ss-medicinska-akuzmanic-zd.skole.hr/javni-poziv-za-prikupljanje-ponuda-za-organizaciju-visednevne-izvanucionicke-nastave-broj-poziva-3-26/) |
-| 2026-10-27 | os-braca-radic-koprivnica.skole.hr | – | [Javni poziv za prijavu kandidata za prijavu pomoćnika u nastavi od 27.10. do 4.11.2026. godine](https://os-braca-radic-koprivnica.skole.hr/wp-content/uploads/sites/1585/2026/10/Javni-poziv-za-prijavu-kandidata-za-prijavu-pomocnika-u-nastavi-od-27.10.-do-4.11.2026.-godine-.pdf) |
-| 2026-10-26 | os-ibmazuranic-orahovica.skole.hr | izlet | [Javni poziv 04 2026 – organizacija terenske nastave za učenike 6. i 8.r. OŠ IBM Orahovica](https://os-ibmazuranic-orahovica.skole.hr/wp-content/uploads/sites/1174/2026/10/Javni-poziv-04-2026-organizacija-terenske-nastave-za-ucenike-6.-i-8.r.-OS-IBM-Orahovica.pdf) |
-| 2026-10-26 | os-ibmazuranic-orahovica.skole.hr | izlet | [JAVNI POZIV – Terenska nastava učenika 6. i 8. razreda](https://os-ibmazuranic-orahovica.skole.hr/javni-poziv-terenska-nastava-ucenika-6-i-8-razreda/) |
-| 2026-10-26 | os-acesarec-ivankovo.skole.hr | ekskurzija | [Javni poziv za ponude, Višednevna ekskurzija, Broj poziva 3-2026](https://os-acesarec-ivankovo.skole.hr/wp-content/uploads/sites/1179/2026/10/Javni-poziv-za-ponude-Visednevna-ekskurzija-Broj-poziva-3-2026.pdf) |
-| 2026-10-26 | ss-treca-ekonomska-zg.skole.hr | – | [Javni poziv I-2026-2027_Budimpešta](https://ss-treca-ekonomska-zg.skole.hr/wp-content/uploads/sites/1849/2026/10/Javni-poziv-I-2026-2027_Budimpesta.docx) |
-| 2026-10-22 | os-dugopolje.skole.hr | ekskurzija | [Javni poziv davatelju usluga za provedbu višednevne izvanučioničke nastave](https://os-dugopolje.skole.hr/wp-content/uploads/sites/2122/2026/10/Javni-poziv-davatelju-usluga-za-provedbu-visednevne-izvanucionicke-nastave.pdf) |
-| 2026-10-21 | os-braca-radic-koprivnica.skole.hr | – | [Javni poziv br. 20_2026_ 7.c i 7.e Južna Dalmacija](https://os-braca-radic-koprivnica.skole.hr/wp-content/uploads/sites/1585/2026/10/Javni-poziv-br.-20_2026_-7.c-i-7.e-Juzna-Dalmacija.docx) |
-| 2026-10-21 | os-braca-radic-koprivnica.skole.hr | – | [Javni poziv br. 21_2026 7.a i 7.d Biograd na Moru](https://os-braca-radic-koprivnica.skole.hr/wp-content/uploads/sites/1585/2026/10/Javni-poziv-br.-21_2026-7.a-i-7.d-Biograd-na-Moru.docx) |
-| 2026-10-21 | os-braca-radic-koprivnica.skole.hr | – | [Javni poziv br. 22_2026 7. b Dubrovnik i Budva](https://os-braca-radic-koprivnica.skole.hr/wp-content/uploads/sites/1585/2026/10/Javni-poziv-br.-22_2026-7.-b-Dubrovnik-i-Budva.docx) |
-| 2026-10-19 | os-iperkovca-senkovec.skole.hr | ekskurzija | [Javni poziv za organizaciju višednevne izvanučioničke nastave 2-2026](https://os-iperkovca-senkovec.skole.hr/wp-content/uploads/sites/2559/2026/10/Javni-poziv-za-organizaciju-visednevne-izvanucionicke-nastave-2-2026-1.doc) |
-| 2026-10-19 | os-iperkovca-senkovec.skole.hr | ekskurzija | [Javni poziv za organizaciju višednevne izvanučioničke nastave 2-2026](https://os-iperkovca-senkovec.skole.hr/wp-content/uploads/sites/2559/2026/10/Javni-poziv-za-organizaciju-visednevne-izvanucionicke-nastave-2-2026.doc) |
-| 2026-10-19 | os-iperkovca-senkovec.skole.hr | skola u prirodi | [Javni poziv za organizaciju višednevne izvanučioničke nastave (škola u prirodi)](https://os-iperkovca-senkovec.skole.hr/javni-poziv-za-organizaciju-visednevne-izvanucionicke-nastave-skola-u-prirodi/) |
-| 2026-10-19 | os-iperkovca-senkovec.skole.hr | skola u prirodi | [Obrazac javnog poziva za višednevnu IUN-škola u prirodi-2-2026](https://os-iperkovca-senkovec.skole.hr/wp-content/uploads/sites/2559/2026/10/Obrazac-javnog-poziva-za-visednevnu-IUN-skola-u-prirodi-2-2026-1.docx) |
-| 2026-10-19 | os-iperkovca-senkovec.skole.hr | skola u prirodi | [Obrazac javnog poziva za višednevnu IUN-škola u prirodi-2-2026](https://os-iperkovca-senkovec.skole.hr/wp-content/uploads/sites/2559/2026/10/Obrazac-javnog-poziva-za-visednevnu-IUN-skola-u-prirodi-2-2026.docx) |
-| 2026-10-19 | ss-medicinska-akuzmanic-zd.skole.hr | – | [javni-poziv](https://ss-medicinska-akuzmanic-zd.skole.hr/wp-content/uploads/sites/1292/2026/10/javni-poziv.jpg) |
-| 2026-10-16 | ss-treca-ekonomska-zg.skole.hr | – | [Javni poziv PUN](https://ss-treca-ekonomska-zg.skole.hr/wp-content/uploads/sites/1849/2026/10/Javni-poziv-PUN.doc) |
-| 2026-10-14 | os-iperkovca-senkovec.skole.hr | maturalno | [Javni poziv za organizaciju višednevne učeničke ekskurzije (maturalno putovanje) 1-2026](https://os-iperkovca-senkovec.skole.hr/wp-content/uploads/sites/2559/2026/10/Javni-poziv-za-organizaciju-visednevne-ucenicke-ekskurzije-maturalno-putovanje-1-2026-1.doc) |
-| 2026-10-13 | os-acesarec-ivankovo.skole.hr | ekskurzija | [Javni poziv, Školska ekskurzija, 7. razredi, 10-2026](https://os-acesarec-ivankovo.skole.hr/wp-content/uploads/sites/1179/2026/10/Javni-poziv-Skolska-ekskurzija-7.-razredi-10-2026.pdf) |
-| 2026-10-13 | os-iperkovca-senkovec.skole.hr | maturalno | [Javni poziv za organizaciju višednevne učeničke ekskurzije (maturalno putovanje) 1-2026](https://os-iperkovca-senkovec.skole.hr/wp-content/uploads/sites/2559/2026/10/Javni-poziv-za-organizaciju-visednevne-ucenicke-ekskurzije-maturalno-putovanje-1-2026.doc) |
-| 2026-10-13 | os-iperkovca-senkovec.skole.hr | maturalno | [Javni poziv za organizaciju višednevne izvanučioničke nastave (maturalno putovanje) 1-2026](https://os-iperkovca-senkovec.skole.hr/wp-content/uploads/sites/2559/2026/10/Javni-poziv-za-organizaciju-visednevne-izvanucionicke-nastave-maturalno-putovanje-1-2026.doc) |
-| 2026-10-13 | os-iperkovca-senkovec.skole.hr | maturalno | [Javni poziv za organizaciju višednevne školske ekskurzije (maturalno putovanje učenika 7. razreda)](https://os-iperkovca-senkovec.skole.hr/javni-poziv-za-organizaciju-visednevne-skolske-ekskurzije-maturalno-putovanje-ucenika-7-razreda/) |
-| 2026-10-09 | os-acesarec-ivankovo.skole.hr | skola u prirodi | [Javni poziv, Škola u prirodi, 4. razredi, 10-2026 (1)](https://os-acesarec-ivankovo.skole.hr/wp-content/uploads/sites/1179/2026/10/Javni-poziv-Skola-u-prirodi-4.-razredi-10-2026-1.pdf) |
-| 2026-10-08 | os-cazma.skole.hr | maturalno | [Javni poziv. Maturalno putovanje 2027.](https://os-cazma.skole.hr/wp-content/uploads/sites/1172/2026/10/Javni-poziv.-Maturalno-putovanje-2027.doc) |
-| 2026-10-08 | os-cazma.skole.hr | ekskurzija | [Javni poziv za organizaciju višednevne izvanučioničke nastave – maturalca za učenike 7. ih razreda OŠ Čazma](https://os-cazma.skole.hr/javni-poziv-za-organizaciju-visednevne-izvanucionicke-nastave-maturalca-za-ucenike-7-ih-razreda-os-cazma/) |
-| 2026-10-08 | os-acesarec-ivankovo.skole.hr | skola u prirodi | [Javni poziv, Škola u prirodi, 4. razredi, 10-2026](https://os-acesarec-ivankovo.skole.hr/wp-content/uploads/sites/1179/2026/10/Javni-poziv-Skola-u-prirodi-4.-razredi-10-2026.pdf) |
-| 2026-10-07 | os-ibmazuranic-orahovica.skole.hr | ekskurzija | [Javni poziv za organizaciju ekskurzije sedmih razreda 7.10.2026.](https://os-ibmazuranic-orahovica.skole.hr/wp-content/uploads/sites/1174/2026/10/Javni-poziv-za-organizaciju-ekskurzije-sedmih-razreda-7.10.2026.pdf) |
-| 2026-10-07 | os-ibmazuranic-orahovica.skole.hr | ekskurzija | [JAVNI POZIV – Ekskurzija učenika sedmih razreda](https://os-ibmazuranic-orahovica.skole.hr/javni-poziv-4/) |
-| 2026-10-06 | os-meterize-si.skole.hr | – | [PUN javni poziv 5 razred-1 MS](https://os-meterize-si.skole.hr/wp-content/uploads/sites/746/2026/10/PUN-javni-poziv-5-razred-1-MS.docx) |
-| 2026-10-02 | os-meterize-si.skole.hr | ekskurzija | [Javni poziv za ekskurziju sedmaši](https://os-meterize-si.skole.hr/wp-content/uploads/sites/746/2026/10/Javni-poziv-za-ekskurziju-sedmasi.docx) |
-| 2026-10-01 | os-koprivnicki-bregi.skole.hr | – | [JAVNI POZIV-POMOĆNICI U NASTAVI ,OBJAVA 30.6.2025](https://os-koprivnicki-bregi.skole.hr/wp-content/uploads/sites/1105/2026/10/JAVNI-POZIV-POMOCNICI-U-NASTAVI-OBJAVA-30.6.2025.pdf) |
-| 2026-09-14 | os-akovacica-mgorica.skole.hr | – | [Javni poziv_2026-09-14](https://os-akovacica-mgorica.skole.hr/wp-content/uploads/sites/473/2026/09/Javni-poziv_2026-09-14.pdf) |
-
-## Odluke o odabiru – cijene i konkurencija (5)
+## Novi javni pozivi – pripremiti ponudu (5)
 
 | Datum | Škola | Vrsta | Dokument |
 | --- | --- | --- | --- |
-| 2026-10-28 | os-ljmodeca-kc.skole.hr | – | [Zapisnik o odabiru agencije za provedbu izvanučioničke nastave 4. a, b i c](https://os-ljmodeca-kc.skole.hr/wp-content/uploads/sites/1976/2026/10/Zapisnik-o-odabiru-agencije-za-provedbu-izvanucionicke-nastave-4.-a-b-i-c.docx) |
-| 2026-10-27 | os-ibmazuranic-orahovica.skole.hr | ekskurzija | [Odluka o odabiru ponuda koje će biti predstavljene roditeljima – Ekskurzija 2027.](https://os-ibmazuranic-orahovica.skole.hr/wp-content/uploads/sites/1174/2026/10/Odluka-o-odabiru-ponuda-koje-ce-biti-predstavljene-roditeljima-Ekskurzija-2027.pdf) |
-| 2026-10-27 | os-cazma.skole.hr | ekskurzija | [Obavijest o odabiru putničkih agencija za predstavljanje roditeljima višednevne izvanučioničke nastave – maturalac učenika 7.ih razreda OŠ Čazma](https://os-cazma.skole.hr/obavijest-o-odabiru-putnickih-agencija-za-predstavljanje-roditeljima-maturalca-ucenika-sedmih-razreda-os-cazma-u-skolskoj-godini-2026-2027/) |
-| 2026-10-23 | os-acesarec-ivankovo.skole.hr | skola u prirodi | [Popis odabranih ponuda, Škola u prirodi, Broj poziva 1-2026 (1)](https://os-acesarec-ivankovo.skole.hr/wp-content/uploads/sites/1179/2026/10/Popis-odabranih-ponuda-Skola-u-prirodi-Broj-poziva-1-2026-1.pdf) |
-| 2026-10-23 | os-acesarec-ivankovo.skole.hr | skola u prirodi | [Popis odabranih ponuda, Škola u prirodi, Broj poziva 1-2026](https://os-acesarec-ivankovo.skole.hr/wp-content/uploads/sites/1179/2026/10/Popis-odabranih-ponuda-Skola-u-prirodi-Broj-poziva-1-2026.pdf) |
+| 2026-10-29 | uciliste-ugostiteljsko-turisticko-zg.skole.hr | – | [Javni poziv PUN_1 izvršitelj](https://uciliste-ugostiteljsko-turisticko-zg.skole.hr/wp-content/uploads/sites/927/2026/10/Javni-poziv-PUN_1-izvrsitelj-1.pdf) |
+| 2026-10-07 | uciliste-ugostiteljsko-turisticko-zg.skole.hr | – | [Javni poziv PUN_1 izvršitelj](https://uciliste-ugostiteljsko-turisticko-zg.skole.hr/wp-content/uploads/sites/927/2026/10/Javni-poziv-PUN_1-izvrsitelj.pdf) |
+| 2026-10-06 | uciliste-ugostiteljsko-turisticko-zg.skole.hr | – | [Javni poziv – Salzburg](https://uciliste-ugostiteljsko-turisticko-zg.skole.hr/wp-content/uploads/sites/927/2026/10/Javni-poziv-Salzburg.pdf) |
+| 2026-10-05 | uciliste-ugostiteljsko-turisticko-zg.skole.hr | – | [Javni poziv Krakow 2](https://uciliste-ugostiteljsko-turisticko-zg.skole.hr/wp-content/uploads/sites/927/2026/10/Javni-poziv-Krakow-2.pdf) |
+| 2026-10-03 | uciliste-ugostiteljsko-turisticko-zg.skole.hr | – | [Javni poziv Krakow](https://uciliste-ugostiteljsko-turisticko-zg.skole.hr/wp-content/uploads/sites/927/2026/10/Javni-poziv-Krakow.pdf) |
 
-## Poništenja – prilika za ponovni poziv (2)
-
-| Datum | Škola | Vrsta | Dokument |
-| --- | --- | --- | --- |
-| 2026-10-23 | os-acesarec-ivankovo.skole.hr | ekskurzija | [2026-10-22 Poništenje javnog poziva, Školska ekskurzija, 7. razredi](https://os-acesarec-ivankovo.skole.hr/wp-content/uploads/sites/1179/2026/10/2026-10-22-Ponistenje-javnog-poziva-Skolska-ekskurzija-7.-razredi.pdf) |
-| 2026-10-23 | os-acesarec-ivankovo.skole.hr | – | [Odluka o poništenju javnog poziva, br.2/2026](https://os-acesarec-ivankovo.skole.hr/odluka-o-ponistenju-javnog-poziva-br-2-2026/) |
-
-## Ostalo o putovanjima (14)
+## Odluke o odabiru – cijene i konkurencija (3)
 
 | Datum | Škola | Vrsta | Dokument |
 | --- | --- | --- | --- |
-| 2026-10-29 | os-mejasi-st.skole.hr | ekskurzija | [Obrazac – ekskurzija učenika 7. razreda u šk. god. 2026.-2027.](https://os-mejasi-st.skole.hr/wp-content/uploads/sites/2282/2026/10/Obrazac-ekskurzija-ucenika-7.-razreda-u-sk.-god.-2026.-2027.pdf) |
-| 2026-10-29 | os-mejasi-st.skole.hr | ekskurzija | [Pravilnik-o-izvodenju-izleta-ekskurzija (1)](https://os-mejasi-st.skole.hr/wp-content/uploads/sites/2282/2026/10/Pravilnik-o-izvodenju-izleta-ekskurzija-1.pdf) |
-| 2026-10-29 | os-mejasi-st.skole.hr | ekskurzija | [Pravilnik-o-izvodenju-izleta-ekskurzija](https://os-mejasi-st.skole.hr/wp-content/uploads/sites/2282/2026/10/Pravilnik-o-izvodenju-izleta-ekskurzija.pdf) |
-| 2026-10-29 | os-mejasi-st.skole.hr | skola u prirodi | [Obrazac – škola u prirodi učenika 4. razreda u šk. god. 2026.-2027.](https://os-mejasi-st.skole.hr/wp-content/uploads/sites/2282/2026/10/Obrazac-skola-u-prirodi-ucenika-4.-razreda-u-sk.-god.-2026.-2027.pdf) |
-| 2026-10-28 | ss-medicinska-akuzmanic-zd.skole.hr | maturalno | [MED-ZD-Maturalna-ekskurzija-obrazac-2026-2027-Spanjolska](https://ss-medicinska-akuzmanic-zd.skole.hr/wp-content/uploads/sites/1292/2026/10/MED-ZD-Maturalna-ekskurzija-obrazac-2026-2027-Spanjolska.docx) |
-| 2026-10-26 | os-ibmazuranic-orahovica.skole.hr | izlet | [„Moja županija” – izlet učenika 3. razreda u Viroviticu](https://os-ibmazuranic-orahovica.skole.hr/moja-zupanija-izlet-ucenika-3-razreda-u-viroviticu/) |
-| 2026-10-25 | ss-ekonomska-si.skole.hr | izlet | [Učenje u autentičnoj stvarnosti: trodnevna terenska nastava u Italiji](https://ss-ekonomska-si.skole.hr/ucenje-u-autenticnoj-stvarnosti-trodnevna-terenska-nastava-u-italiji/) |
-| 2026-09-29 | os-iperkovca-senkovec.skole.hr | maturalno | [Maturalno putovanje učenika osmih razreda naše škole](https://os-iperkovca-senkovec.skole.hr/maturalno-putovanje-ucenika-osmih-razreda-nase-skole/) |
-| 2026-09-29 | ss-ekonomska-si.skole.hr | maturalno | [Maturalno putovanje – Barcelona 2026.](https://ss-ekonomska-si.skole.hr/maturalno-putovanje-barcelona-2026/) |
-| 2026-09-28 | os-braca-radic-koprivnica.skole.hr | izlet | [Planinarski izlet na Donačku goru](https://os-braca-radic-koprivnica.skole.hr/planinarski-izlet-na-donacku-goru/) |
-| 2026-09-23 | os-mitnica-vu.skole.hr | ekskurzija | [Nezaboravna ekskurzija je iza nas!](https://os-mitnica-vu.skole.hr/nezaboravna-ekskurzija-je-iza-nas/) |
-| 2026-09-18 | os-slatine.skole.hr | ekskurzija | [Ekskurzija 7. i 8. razreda u Istru](https://os-slatine.skole.hr/ekskurzija-7-i-8-razreda-u-istru/) |
-| 2026-09-16 | os-akovacica-mgorica.skole.hr | – | [Održan sastanak projektnog tima Erasmus+ projekta„Veliko putovanje za malu školu“](https://os-akovacica-mgorica.skole.hr/odrzan-sastanak-projektnog-tima-erasmus-projektaveliko-putovanje-za-malu-skolu/) |
-| 2026-09-14 | os-koprivnicki-bregi.skole.hr | maturalno | [MATURALNO PUTOVANJE](https://os-koprivnicki-bregi.skole.hr/maturalno-putovanje/) |
+| 2026-10-29 | os-trstenik-st.skole.hr | ekskurzija | [OBAVIJEST O ODABRANIM PONUDAMA ZA ORGANIZACIJU EKSKURZIJE](https://os-trstenik-st.skole.hr/obavijest-o-odabranim-ponudama-za-organizaciju-ekskurzije/) |
+| 2026-10-06 | uciliste-ugostiteljsko-turisticko-zg.skole.hr | – | [Javni poziv 03/ 2026 – Salzburg – Odluka o odabiru ponuda – Odluka o odabiru putničke agencije](https://uciliste-ugostiteljsko-turisticko-zg.skole.hr/javni-poziv-salzburg/) |
+| 2026-10-05 | uciliste-ugostiteljsko-turisticko-zg.skole.hr | – | [Javni poziv 02/2026 – Krakow – Odluka o odabiru ponuda – Odluka o odabiru putničke agencije](https://uciliste-ugostiteljsko-turisticko-zg.skole.hr/javni-poziv-krakow-2/) |
 
-## Nedostupne stranice (3)
+## Poništenja – prilika za ponovni poziv (1)
 
-- gimnazija-vnazora-zd.skole.hr: HTTP Error 500: Internal Server Error
-- ss-primijenjenaumjetnost-ri.skole.hr: HTTP Error 500: Internal Server Error
-- uciliste-ugostiteljsko-turisticko-zg.skole.hr: HTTP Error 500: Internal Server Error
+| Datum | Škola | Vrsta | Dokument |
+| --- | --- | --- | --- |
+| 2026-10-03 | uciliste-ugostiteljsko-turisticko-zg.skole.hr | – | [Javni poziv 01/2026 – Krakow – Odluka o poništenju javnog poziva](https://uciliste-ugostiteljsko-turisticko-zg.skole.hr/javni-poziv-krakow/) |
+
+## Ostalo o putovanjima (1)
+
+| Datum | Škola | Vrsta | Dokument |
+| --- | --- | --- | --- |
+| 2026-10-12 | gimnazija-vnazora-zd.skole.hr | – | [Studijsko putovanje DSD učenika u Hamburg](https://gimnazija-vnazora-zd.skole.hr/studijsko-putovanje-dsd-ucenika-u-hamburg/) |
+
+## Nedostupne stranice (5)
+
+- os-koprivnicki-bregi.skole.hr: HTTP Error 500: Internal Server Error
+- os-cazma.skole.hr: HTTP Error 500: Internal Server Error
+- os-ostrog-kastelluksic.skole.hr: HTTP Error 500: Internal Server Error
+- os-donja-dubrava.skole.hr: HTTP Error 500: Internal Server Error
+- os-braca-radic-koprivnica.skole.hr: HTTP Error 500: Internal Server Error
