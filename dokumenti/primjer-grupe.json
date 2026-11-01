@@ -1,0 +1,21 @@
+{
+  "broj": "2026-001",
+  "skola": "[Naziv škole, mjesto]",
+  "razred": "[razredi]",
+  "program": "varazdin-trakoscan",
+  "datum": null,
+  "cijena": null,
+  "min_ucenika": null,
+  "akontacija": null,
+  "rok_prijave": null,
+  "rok_akontacije": null,
+  "rok_ostatka": null,
+  "osiguranje_otkaza": null,
+  "uvjeti_osiguranja": null,
+  "jamstvo": null,
+  "osiguranje_odgovornosti": null,
+  "kartice": null,
+  "radno_vrijeme": null,
+  "datum_ponude": null,
+  "ucenici": ["[Učenik 1]", "[Učenik 2]", "[Učenik 3]"]
+}

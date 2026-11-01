@@ -162,6 +162,27 @@ export default {
   },
 
   forms: {
+
+    regTitle: 'Registration details',
+    regCode: 'Code from the letter',
+    regCodeHint: '8 letters, e.g. PWAUGCCR',
+    regPupil: 'Pupil’s full name',
+    regBirth: 'Pupil’s date of birth',
+    regClass: 'Class',
+    regParent: 'Parent’s or guardian’s full name',
+    regAllergies: 'Allergies (food, medicines, other)',
+    regDiet: 'Special diet',
+    regMeds: 'Medicines and instructions for teachers',
+    regHealthHint: 'Leave empty if none.',
+    regCancel: 'I would like cancellation insurance (surcharge as per the offer)',
+    regTerms: 'I have read the offer, the terms and conditions, the standard information form for package travel and the travel insurance terms, and I accept the contract and payment as per the offer.',
+    regPrivacy: 'I agree that TERRA POMALO d.o.o. may process these details to organise the trip.',
+    regHealth: 'I explicitly agree to the processing of my child’s health and dietary data solely for their safety on this trip; the data is deleted after the trip.',
+    regSubmit: 'Send registration',
+    regSubject: (code, pupil) => `Pupil registration: ${code} – ${pupil}`,
+    regSentTitle: 'Registration sent',
+    regSentText: 'Thank you! We will confirm by email. The registration is valid once the deposit is paid with the reference from the letter.',
+    regCodeError: 'The code has 8 letters; copy it from the letter or scan the QR code.',
     name: 'Full name',
     teacher: 'Teacher’s full name',
     school: 'School name and town',
@@ -290,6 +311,16 @@ export default {
   categoryUi: { programs: 'Programmes', custom: 'Not seeing the destination you want? We will put together a programme for your class.', all: 'All programmes' },
 
   pages: {
+
+    registration: {
+      title: 'Pupil registration',
+      description: 'Register a pupil for a school trip with the personal code from the Veliki odmor letter.',
+      intro: 'Enter the code from the letter you received from the school and the pupil’s details. The registration is valid once it is sent and the deposit is paid.',
+      sections: [
+        { id: 'before', title: 'Before you register', text: ['Read the offer from the school and our terms. The standard information form for package travel and the travel insurance terms come with the offer. [Links to the form and insurance terms]'], links: [{ label: 'Terms', page: 'terms' }, { label: 'Data protection', page: 'privacy' }] },
+      ],
+      form: 'registration',
+    },
 
     teachers: {
       title: 'For schools',

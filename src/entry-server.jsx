@@ -114,6 +114,8 @@ export function pages() {
     list.push({ route: { lang, page: 'home' }, title: t.meta.homeTitle, description: t.meta.homeDescription, ld: (path) => home(t, path) });
     for (const p of ['teachers', 'safety', 'parents', 'partners', 'about', 'terms', 'privacy'])
       list.push({ route: { lang, page: p }, title: t.pages[p].title + suffix, description: t.pages[p].description, ...(p === 'parents' && { ld: () => faq(t) }) });
+    // Prijava s kodom iz pisma: izvan tražilica i karte stranice
+    list.push({ route: { lang, page: 'registration' }, title: t.pages.registration.title + suffix, description: t.pages.registration.description, noindex: true });
     list.push({ route: { lang, page: 'legal' }, title: t.legal.title + suffix, description: t.legal.description });
     list.push({ route: { lang, page: 'notfound' }, title: t.notFound.title + suffix, description: t.notFound.description, noindex: true });
     for (const c of CATEGORIES) {

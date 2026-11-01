@@ -40,7 +40,9 @@ export function useForm(initial, schema) {
     setStatus('idle');
   };
 
-  return { values, field, submit, status, reset };
+  const set = (name, value) => setValues((v) => ({ ...v, [name]: value }));
+
+  return { values, field, submit, status, reset, set };
 }
 
 /** Redovi poruke „Oznaka: vrijednost“ (prazna polja se izostavljaju). */

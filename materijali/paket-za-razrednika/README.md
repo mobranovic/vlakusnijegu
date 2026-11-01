@@ -20,4 +20,6 @@ Po programu (mapa s id-om programa):
 - `bec-budimpesta/` – Beč & Budimpešta za srednje škole
 - `varazdin-trakoscan/` – Varaždin & Trakošćan
 
+Ponuda i pisma s kodom za prijavu za konkretnu grupu: `dokumenti/README.md`.
+
 Napomena: tekst javnog poziva i uvjete ponude piše škola; agencija ih ne priprema.

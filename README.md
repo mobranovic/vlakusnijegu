@@ -39,3 +39,5 @@ broj rata, gratis, pravilo o alkoholu (Sigurnosni standard), članstvo u udruže
 - `materijali/paket-za-razrednika/` – paket za razrednika (Word i PowerPoint), generira ga `scripts/paket.py`
   iz podataka programa: `node scripts/export-trips.mjs > /tmp/trips.json && python3 scripts/paket.py /tmp/trips.json`.
 - `pracenje/` – svakodnevno praćenje javnih poziva škola (`scripts/pracenje/pozivi.py`, GitHub Actions), vidi `pracenje/README.md`.
+- `dokumenti/` – ponuda za grupu i pisma za učenike s kodom za prijavu, QR kodom i barkodom za plaćanje
+  (`scripts/grupa.py`); prijava na webu: `/prijava/?kod=…` (`src/components/RegistrationForm.jsx`).

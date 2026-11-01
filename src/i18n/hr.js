@@ -163,6 +163,27 @@ export default {
   },
 
   forms: {
+
+    regTitle: 'Podaci za prijavu',
+    regCode: 'Kod iz pisma',
+    regCodeHint: '8 slova, npr. PWAUGCCR',
+    regPupil: 'Ime i prezime učenika',
+    regBirth: 'Datum rođenja učenika',
+    regClass: 'Razred',
+    regParent: 'Ime i prezime roditelja ili skrbnika',
+    regAllergies: 'Alergije (hrana, lijekovi, ostalo)',
+    regDiet: 'Posebna prehrana',
+    regMeds: 'Lijekovi i upute za pratitelje',
+    regHealthHint: 'Ostavite prazno ako nema.',
+    regCancel: 'Želim osiguranje od otkaza putovanja (doplata prema ponudi)',
+    regTerms: 'Upoznat/a sam s ponudom, Općim uvjetima poslovanja, obrascem standardnih informacija za paket aranžmane i uvjetima putnog osiguranja te prihvaćam ugovornu obvezu i plaćanje prema ponudi.',
+    regPrivacy: 'Pristajem da TERRA POMALO d.o.o. obradi navedene podatke radi organizacije putovanja.',
+    regHealth: 'Izričito pristajem na obradu podataka o zdravlju i prehrani djeteta isključivo radi sigurnosti na ovom putovanju; podaci se brišu nakon putovanja.',
+    regSubmit: 'Pošalji prijavu',
+    regSubject: (code, pupil) => `Prijava putnika: ${code} – ${pupil}`,
+    regSentTitle: 'Prijava je poslana',
+    regSentText: 'Hvala! Potvrdu prijave šaljemo na vašu e-poštu. Prijava postaje valjana uplatom akontacije s pozivom na broj iz pisma.',
+    regCodeError: 'Kod ima 8 slova; prepišite ga iz pisma ili očitajte QR kod.',
     name: 'Ime i prezime',
     teacher: 'Ime i prezime nastavnika',
     school: 'Naziv škole i mjesto',
@@ -294,6 +315,16 @@ export default {
   categoryUi: { programs: 'Programi', custom: 'Ne vidite odredište koje tražite? Pripremit ćemo program po mjeri vašeg razreda.', all: 'Svi programi' },
 
   pages: {
+
+    registration: {
+      title: 'Prijava učenika na putovanje',
+      description: 'Prijava učenika na školsko putovanje s osobnim kodom iz pisma agencije Veliki odmor.',
+      intro: 'Upišite kod iz pisma koje ste dobili od škole i podatke o učeniku. Slanjem prijave i uplatom akontacije prijava postaje valjana.',
+      sections: [
+        { id: 'prije', title: 'Prije prijave', text: ['Pročitajte ponudu koju ste dobili od škole te Opće uvjete poslovanja. Obrazac standardnih informacija za ugovore o paket aranžmanu i uvjete putnog osiguranja dobivate uz ponudu. [Poveznice na obrazac i uvjete osiguranja]'], links: [{ label: 'Opći uvjeti', page: 'terms' }, { label: 'Zaštita podataka', page: 'privacy' }] },
+      ],
+      form: 'registration',
+    },
 
     teachers: {
       title: 'Za nastavnike',

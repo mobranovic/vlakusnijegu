@@ -5,6 +5,7 @@ import { ph, visible } from '../lib/placeholders.js';
 import { useRoute } from '../route.jsx';
 import { InquiryForm } from './InquiryForm.jsx';
 import { PartnerForm } from './PartnerForm.jsx';
+import { RegistrationForm } from './RegistrationForm.jsx';
 import { PublicCallForm } from './TeachersSection.jsx';
 import { Photo } from './ui/Photo.jsx';
 
@@ -111,9 +112,11 @@ export function InfoPage({ page }) {
         {page.form && (
           <section id="obrazac" className="mt-12 scroll-mt-24 rounded-3xl bg-white p-5 shadow-card sm:p-8">
             <h2 className="font-display text-2xl font-bold text-brand-900">
-              {page.form === 'call' || page.form === 'inquiry' ? t.teachers.formTitle : t.forms.partnerTitle}
+              {page.form === 'registration' ? t.forms.regTitle : page.form === 'call' || page.form === 'inquiry' ? t.teachers.formTitle : t.forms.partnerTitle}
             </h2>
-            <div className="mt-5">{page.form === 'call' ? <PublicCallForm /> : page.form === 'inquiry' ? <InquiryForm /> : <PartnerForm />}</div>
+            <div className="mt-5">
+              {page.form === 'registration' ? <RegistrationForm /> : page.form === 'call' ? <PublicCallForm /> : page.form === 'inquiry' ? <InquiryForm /> : <PartnerForm />}
+            </div>
           </section>
         )}
       </div>

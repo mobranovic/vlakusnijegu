@@ -6,7 +6,7 @@ import { CATEGORIES } from './data/categories.js';
  *   /  ·  /en/                                   početna
  *   /izleti/<slug>/  ·  /en/trips/<slug>/        program
  *   /skola-u-prirodi/ · /jednodnevni-izleti/ · /ekskurzije/  ·  /en/outdoor-school/ …   vrsta putovanja (src/data/categories.js)
- *   /za-nastavnike/ · /sigurnosni-standard/ · /za-roditelje/ · /suradnja/ · /o-nama/ · /opci-uvjeti/ · /zastita-podataka/ · /pravne-informacije/
+ *   /prijava/?kod=… (prijava učenika s kodom iz pisma) · /za-nastavnike/ · /sigurnosni-standard/ · /za-roditelje/ · /suradnja/ · /o-nama/ · /opci-uvjeti/ · /zastita-podataka/ · /pravne-informacije/
  *   /en/for-parents/ · /en/partners/ · /en/about/ · /en/terms/ · /en/privacy/ · /en/legal/
  *   /404.html · /en/404.html
  * Svaka adresa se pri izgradnji iscrtava u vlastiti index.html (scripts/prerender.mjs).
@@ -21,6 +21,7 @@ const TRIP_DIR = { hr: 'izleti', en: 'trips' };
 export const PAGE_DIR = {
   teachers: { hr: 'za-nastavnike', en: 'for-schools' },
   safety: { hr: 'sigurnosni-standard', en: 'safety-standard' },
+  registration: { hr: 'prijava', en: 'registration' },
   parents: { hr: 'za-roditelje', en: 'for-parents' },
   partners: { hr: 'suradnja', en: 'partners' },
   about: { hr: 'o-nama', en: 'about' },

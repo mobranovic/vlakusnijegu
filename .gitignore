@@ -3,3 +3,6 @@ dist
 .DS_Store
 dist-ssr
 dist-preview
+dokumenti/*/
+!dokumenti/2026-001/
+__pycache__
