@@ -1,7 +1,7 @@
 const BASE = import.meta.env.BASE_URL;
 
 /** Fotografija iz public/images (WebP uz JPG kao pričuvu). */
-export function Photo({ name, alt, className = '', eager }) {
+export function Photo({ name, alt, className = '', eager, position }) {
   return (
     <picture>
       <source srcSet={`${BASE}images/${name}.webp`} type="image/webp" />
@@ -11,6 +11,7 @@ export function Photo({ name, alt, className = '', eager }) {
         loading={eager ? 'eager' : 'lazy'}
         decoding="async"
         className={`h-full w-full object-cover ${className}`}
+        style={position ? { objectPosition: position } : undefined}
       />
     </picture>
   );

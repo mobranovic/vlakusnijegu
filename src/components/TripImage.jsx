@@ -8,7 +8,7 @@ export function TripImage({ trip, alt, label, className = '', eager }) {
   if (trip.photo) {
     return (
       <div className={`relative overflow-hidden bg-brand-100 ${className}`}>
-        <Photo name={trip.photo} alt={alt} eager={eager} />
+        <Photo name={trip.photo} alt={alt} eager={eager} position={trip.photoPos} />
       </div>
     );
   }

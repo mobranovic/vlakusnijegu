@@ -56,6 +56,9 @@ export const PHOTO_CREDITS = [
   { image: 'trakoscan', place: { hr: 'Dvorac Trakošćan', en: 'Trakošćan Castle' }, author: 'Valentina Vuk', ...unsplash('xUKRrMZe7kM') },
   { image: 'gorska-rijeka', place: { hr: 'Gorski kotar', en: 'Gorski kotar' }, author: 'Adam Bašić', ...unsplash('hX-nuUw5NPE') },
   { image: 'gorska-dolina', place: { hr: 'Gorski kotar', en: 'Gorski kotar' }, author: 'Marija Perić', ...unsplash('BTIWzA2n9ow') },
+  { image: 'risnjak', place: { hr: 'Planinarski dom, Gorski kotar', en: 'Mountain hut, Gorski kotar' }, author: 'Sins S', ...unsplash('GH4Q9C-ki5k') },
+  { image: 'gorski-snijeg', place: { hr: 'Gorski kotar zimi', en: 'Gorski kotar in winter' }, author: 'Ozren Čučulić', ...unsplash('ib_IGhG4tic') },
+  { image: 'prater', place: { hr: 'Prater, Beč', en: 'Prater, Vienna' }, author: 'Marie Rouilly', ...unsplash('sg2gH4Zap48') },
   { image: 'zagreb', place: { hr: 'Crkva sv. Marka, Zagreb', en: 'St Mark’s Church, Zagreb' }, author: 'Alexander Klink', url: 'https://commons.wikimedia.org/wiki/File:St_Marks_Church_Zagreb.jpg', license: 'CC BY 3.0', licenseUrl: 'https://creativecommons.org/licenses/by/3.0/' },
   { image: 'bec', place: { hr: 'Dvorac Schönbrunn, Beč', en: 'Schönbrunn Palace, Vienna' }, author: 'Thomas Wolf, www.foto-tw.de', url: 'https://commons.wikimedia.org/wiki/File:Schloss_Sch%C3%B6nbrunn_Wien_2014_(Zuschnitt_1).jpg', license: 'CC BY-SA 3.0 DE', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/de/' },
 ];

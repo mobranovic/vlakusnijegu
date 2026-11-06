@@ -109,6 +109,7 @@ export default {
     copied: 'Poveznica je kopirana',
     inquiryTitle: 'Pošaljite upit za ovaj izlet',
     inquiryText: 'Odgovaramo s prijedlogom programa za vaš razred i cijenom po učeniku.',
+    gallery: 'Fotografije',
     stickyCta: 'Pošalji upit',
     shareShort: { print: 'PDF', whatsapp: 'WhatsApp', copy: 'Poveznica' },
     more: 'Drugi programi',

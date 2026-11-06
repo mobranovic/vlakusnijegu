@@ -108,6 +108,7 @@ export default {
     copied: 'Link copied',
     inquiryTitle: 'Enquire about this trip',
     inquiryText: 'We reply with a programme proposal for your class and a price per pupil.',
+    gallery: 'Photos',
     stickyCta: 'Send enquiry',
     shareShort: { print: 'PDF', whatsapp: 'WhatsApp', copy: 'Link' },
     more: 'Other programmes',

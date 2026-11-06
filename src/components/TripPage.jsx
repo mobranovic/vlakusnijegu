@@ -1,6 +1,7 @@
 import { BookOpen, Check, CheckCircle2, ChevronLeft, Clock, Link2, MapPin, MessageCircle, Printer, Send, Users, Wallet, XCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { ADDRESS, EMAILS, OWNER, PHONES, SITE_URL } from '../data/company.js';
+import { ADDRESS, EMAILS, OWNER, PHONES, PHOTO_CREDITS, SITE_URL } from '../data/company.js';
+import { Photo } from './ui/Photo.jsx';
 import { TRIPS } from '../data/trips.js';
 import { useT } from '../i18n/index.jsx';
 import { formatDuration } from '../lib/format.js';
@@ -163,6 +164,15 @@ export function TripPage({ trip }) {
             <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand-700"><Wallet className="h-4 w-4" /> {t.trip.price}</p>
             <ul className="mt-2 space-y-2 text-sm text-slate-700">{priceRows.map((p) => <li key={p}>{p}</li>)}</ul>
           </div>
+          {trip.gallery && (
+            <ul className="grid grid-cols-2 gap-3 no-print" aria-label={t.trip.gallery}>
+              {trip.gallery.map((g) => (
+                <li key={g} className="aspect-[4/3] overflow-hidden rounded-2xl shadow-card">
+                  <Photo name={g} alt={PHOTO_CREDITS.find((c) => c.image === g)?.place[t.meta.lang] || text.title} />
+                </li>
+              ))}
+            </ul>
+          )}
           <p className="text-xs text-slate-600 no-print">{t.trip.printNote}</p>
         </aside>
       </div>
