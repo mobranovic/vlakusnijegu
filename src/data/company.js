@@ -46,12 +46,16 @@ export const SOCIAL = [
   { id: 'instagram', label: 'Instagram', url: '' },
 ];
 
-// Fotografije s Unsplasha (Unsplash License), iste kao na stranici Terra Pomalo
+// Autori fotografija i licence (Unsplash kao na terrapomalo.hr; Wikimedia Commons uz navođenje autora i licence).
+// Fotografije s Commonsa smanjene su i izrezane za kartice; izmijenjene inačice dijele se pod istom licencom.
+const unsplash = (id) => ({ url: `https://unsplash.com/photos/${id}`, license: 'Unsplash License', licenseUrl: 'https://unsplash.com/license' });
 export const PHOTO_CREDITS = [
-  { image: 'bajer', place: { hr: 'Jezero Bajer, Fužine', en: 'Lake Bajer, Fužine' }, author: 'Ozren Čučulić', id: 'Vfycf7K86hM' },
-  { image: 'plitvice', place: { hr: 'Plitvička jezera', en: 'Plitvice Lakes' }, author: 'Mike Swigunski', id: 'NfkWUOkB78c' },
-  { image: 'motovun', place: { hr: 'Motovun', en: 'Motovun' }, author: 'Elimende Inagella', id: 'UHE9YMcGBX8' },
-  { image: 'trakoscan', place: { hr: 'Dvorac Trakošćan', en: 'Trakošćan Castle' }, author: 'Valentina Vuk', id: 'xUKRrMZe7kM' },
-  { image: 'gorska-rijeka', place: { hr: 'Gorski kotar', en: 'Gorski kotar' }, author: 'Adam Bašić', id: 'hX-nuUw5NPE' },
-  { image: 'gorska-dolina', place: { hr: 'Gorski kotar', en: 'Gorski kotar' }, author: 'Marija Perić', id: 'BTIWzA2n9ow' },
+  { image: 'bajer', place: { hr: 'Jezero Bajer, Fužine', en: 'Lake Bajer, Fužine' }, author: 'Ozren Čučulić', ...unsplash('Vfycf7K86hM') },
+  { image: 'plitvice', place: { hr: 'Plitvička jezera', en: 'Plitvice Lakes' }, author: 'Mike Swigunski', ...unsplash('NfkWUOkB78c') },
+  { image: 'motovun', place: { hr: 'Motovun', en: 'Motovun' }, author: 'Elimende Inagella', ...unsplash('UHE9YMcGBX8') },
+  { image: 'trakoscan', place: { hr: 'Dvorac Trakošćan', en: 'Trakošćan Castle' }, author: 'Valentina Vuk', ...unsplash('xUKRrMZe7kM') },
+  { image: 'gorska-rijeka', place: { hr: 'Gorski kotar', en: 'Gorski kotar' }, author: 'Adam Bašić', ...unsplash('hX-nuUw5NPE') },
+  { image: 'gorska-dolina', place: { hr: 'Gorski kotar', en: 'Gorski kotar' }, author: 'Marija Perić', ...unsplash('BTIWzA2n9ow') },
+  { image: 'zagreb', place: { hr: 'Crkva sv. Marka, Zagreb', en: 'St Mark’s Church, Zagreb' }, author: 'Alexander Klink', url: 'https://commons.wikimedia.org/wiki/File:St_Marks_Church_Zagreb.jpg', license: 'CC BY 3.0', licenseUrl: 'https://creativecommons.org/licenses/by/3.0/' },
+  { image: 'bec', place: { hr: 'Dvorac Schönbrunn, Beč', en: 'Schönbrunn Palace, Vienna' }, author: 'Thomas Wolf, www.foto-tw.de', url: 'https://commons.wikimedia.org/wiki/File:Schloss_Sch%C3%B6nbrunn_Wien_2014_(Zuschnitt_1).jpg', license: 'CC BY-SA 3.0 DE', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/de/' },
 ];

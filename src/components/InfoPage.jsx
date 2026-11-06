@@ -34,7 +34,9 @@ function Credits() {
           <span className="h-12 w-12 shrink-0 overflow-hidden rounded-lg"><Photo name={c.image} alt="" /></span>
           <span>
             {c.place[t.meta.lang]} ·{' '}
-            <a href={`https://unsplash.com/photos/${c.id}`} target="_blank" rel="noreferrer" className="text-brand-700 underline underline-offset-2">{c.author}</a>
+            <a href={c.url} target="_blank" rel="noreferrer" className="text-brand-700 underline underline-offset-2">{c.author}</a>
+            {' · '}
+            <a href={c.licenseUrl} target="_blank" rel="noreferrer" className="underline underline-offset-2">{c.license}</a>
           </span>
         </li>
       ))}
