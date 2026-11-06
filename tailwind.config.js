@@ -23,6 +23,8 @@ export default {
           100: '#EAF4FB',
           200: '#D3E8F6',
         },
+        // Topli papir razglednice – pozadine odjeljaka za roditelje i iskustva
+        paper: '#FFF8EC',
         // Topli jantar – pozivi na akciju
         amber: {
           400: '#F7A93B',

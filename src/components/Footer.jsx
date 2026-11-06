@@ -1,9 +1,10 @@
 import { CATEGORIES } from '../data/categories.js';
-import { ADDRESS, EMAILS, MAP_URL, PHONES, SOCIAL } from '../data/company.js';
+import { ADDRESS, EMAILS, MAP_URL, PHONES, SOCIAL, TERRA_POMALO_URL } from '../data/company.js';
 import { useT } from '../i18n/index.jsx';
 import { useRoute } from '../route.jsx';
 import { Logo } from './Logo.jsx';
 import { Newsletter } from './Newsletter.jsx';
+import { TerraLogo } from './TerraLogo.jsx';
 
 /** Stupac poveznica s naslovom. */
 function Column({ title, links, className = '' }) {
@@ -93,7 +94,12 @@ export function Footer() {
             )}
           </div>
         </div>
-        <div className="mt-12 flex flex-col gap-3 border-t border-brand-500 pt-6 text-[0.8125rem]">
+        {/* Matična marka: Veliki odmor je brend turističke agencije Terra Pomalo (logo iz Knjige standarda, ≥ 230 px) */}
+        <a href={TERRA_POMALO_URL} target="_blank" rel="noopener noreferrer" className="mt-12 flex flex-col gap-3 text-[0.9375rem] hover:text-white sm:flex-row sm:items-center sm:gap-6" aria-label={`${t.meta.title} – ${t.ui.brandOf} Terra Pomalo (${f.newTab})`}>
+          <span>{t.meta.title} – {t.ui.brandOf}</span>
+          <TerraLogo className="h-auto w-[230px] text-[#F7F2E8]" />
+        </a>
+        <div className="mt-8 flex flex-col gap-3 border-t border-brand-500 pt-6 text-[0.8125rem]">
           {/* Dijelovi pravnog retka se ne lome iznutra (npr. ID kod) */}
           <p>
             ©&nbsp;{new Date().getFullYear()}{' '}

@@ -29,6 +29,10 @@ export function useNavLink() {
   const t = useT();
   return (item) => {
     if (item.page) return { href: route.href(item.page) };
+    if (item.category) {
+      const cat = CATEGORIES.find((c) => c.id === item.category);
+      return { href: route.href('category', { slug: cat.slug[route.lang] }) };
+    }
     if (item.contact) return { href: '#kontakt', onClick: (e) => { e.preventDefault(); scrollToId('kontakt', true); } };
     const id = t.ids[item.section] + (item.filter ? `-${item.filter}` : '');
     const href = route.sectionHref(id);

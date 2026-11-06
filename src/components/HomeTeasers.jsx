@@ -10,7 +10,7 @@ export function ParentsTeaser() {
   const { href } = useRoute();
   const s = t.parentsTeaser;
   return (
-    <section id={t.ids.parents} className="scroll-mt-20 bg-ice-50 py-16 sm:py-20">
+    <section id={t.ids.parents} className="scroll-mt-20 bg-paper py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeader eyebrow={s.eyebrow} title={s.title}>{s.text}</SectionHeader>

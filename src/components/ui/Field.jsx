@@ -54,7 +54,7 @@ export function Field({ label, hint, required, error, valid, as = 'input', optio
       {error ? (
         <p id={`${id}-err`} className="mt-1.5 text-xs font-medium text-red-600">{error}</p>
       ) : hint ? (
-        <p id={`${id}-hint`} className="mt-1.5 text-xs text-slate-500">{hint}</p>
+        <p id={`${id}-hint`} className="mt-1.5 text-xs text-slate-600">{hint}</p>
       ) : null}
     </div>
   );

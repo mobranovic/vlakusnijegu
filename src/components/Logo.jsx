@@ -22,7 +22,7 @@ export function Logo({ dark }) {
       <LogoMark />
       <span className="leading-tight">
         <span className={`block font-display text-lg font-bold ${dark ? 'text-white' : 'text-brand-900'}`}>{BRAND}</span>
-        <span className={`block text-[11px] font-medium ${dark ? 'text-brand-200' : 'text-slate-500'}`}>{t.ui.tagline}</span>
+        <span className={`block text-[11px] font-medium ${dark ? 'text-brand-200' : 'text-slate-600'}`}>{t.ui.tagline}</span>
       </span>
     </span>
   );

@@ -32,6 +32,12 @@
   }
 }
 
+/* Motiv bilježnice: linije kao na stranici školske bilježnice (odjeljak Za nastavnike) */
+.notebook {
+  background-color: #fff;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 31px, rgba(37, 95, 166, 0.09) 31px, rgba(37, 95, 166, 0.09) 32px);
+}
+
 /* Podcrtavanje poveznice pri prelasku mišem (kao na terrapomalo.hr); u sloju components da pomoćne klase (npr. block) imaju prednost */
 @layer components {
   .link-line {

@@ -66,7 +66,7 @@ function SectionBody({ s }) {
           ))}
         </dl>
       )}
-      {(s.after || []).filter(visible).map((p) => <p key={p} className="mt-3 text-sm text-slate-500">{ph(p)}</p>)}
+      {(s.after || []).filter(visible).map((p) => <p key={p} className="mt-3 text-sm text-slate-600">{ph(p)}</p>)}
       {s.links && <Links links={s.links} />}
       {s.credits && <Credits />}
     </>

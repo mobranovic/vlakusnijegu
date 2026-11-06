@@ -28,7 +28,7 @@ function Share({ title }) {
   };
   return (
     <div className="flex flex-wrap items-center gap-2 no-print">
-      <span className="mr-1 text-sm font-medium text-slate-500">{t.trip.share}:</span>
+      <span className="mr-1 text-sm font-medium text-slate-600">{t.trip.share}:</span>
       <Button variant="outline" size="sm" onClick={() => window.print()} title={t.trip.print} aria-label={t.trip.print}>
         <Printer className="h-4 w-4" /> {t.trip.shareShort.print}
       </Button>
@@ -109,7 +109,10 @@ export function TripPage({ trip }) {
               </p>
               <div className="mt-6"><Share title={text.title} /></div>
             </div>
-            <TripImage trip={trip} alt={text.title} label={t.catalogue.photo} eager className="hidden aspect-[4/3] rounded-3xl no-print lg:block" />
+            <figure className="hidden rotate-[1deg] rounded-[1.25rem] bg-white p-3 pb-3 shadow-xl no-print lg:block">
+              <TripImage trip={trip} alt={text.title} label={t.catalogue.photo} eager className="aspect-[4/3] rounded-xl" />
+              <figcaption className="mt-2.5 text-center font-display text-base font-semibold text-brand-800">{text.region.split(' · ')[0]}</figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -117,7 +120,7 @@ export function TripPage({ trip }) {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.5fr_1fr] lg:px-8">
         <section aria-labelledby="plan" className="min-w-0">
           <h2 id="plan" className="font-display text-2xl font-bold text-brand-900">{t.trip.itinerary}</h2>
-          <p className="mt-2 text-sm text-slate-500">{t.trip.itineraryNote}</p>
+          <p className="mt-2 text-sm text-slate-600">{t.trip.itineraryNote}</p>
           <ol className="mt-6 space-y-7">
             {text.itinerary.map((day) => (
               <li key={day.label} className="break-inside-avoid">
@@ -160,7 +163,7 @@ export function TripPage({ trip }) {
             <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand-700"><Wallet className="h-4 w-4" /> {t.trip.price}</p>
             <ul className="mt-2 space-y-2 text-sm text-slate-700">{priceRows.map((p) => <li key={p}>{p}</li>)}</ul>
           </div>
-          <p className="text-xs text-slate-500 no-print">{t.trip.printNote}</p>
+          <p className="text-xs text-slate-600 no-print">{t.trip.printNote}</p>
         </aside>
       </div>
 

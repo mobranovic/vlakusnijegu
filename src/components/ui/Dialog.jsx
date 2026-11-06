@@ -38,12 +38,12 @@ export function Dialog({ open, onClose, title, subtitle, children, size = 'lg', 
         <div className="flex items-start justify-between gap-4 border-b border-slate-100 px-5 py-4 sm:px-7">
           <div className="min-w-0">
             <h2 className="font-display text-xl font-bold text-brand-900 sm:text-2xl">{title}</h2>
-            {subtitle && <p className="mt-0.5 text-sm text-slate-500">{subtitle}</p>}
+            {subtitle && <p className="mt-0.5 text-sm text-slate-600">{subtitle}</p>}
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="rounded-full p-2 text-slate-500 hover:bg-slate-100 hover:text-brand-900"
+            className="rounded-full p-2 text-slate-600 hover:bg-slate-100 hover:text-brand-900"
             aria-label={closeLabel}
           >
             <X className="h-5 w-5" />

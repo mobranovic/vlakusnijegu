@@ -51,11 +51,11 @@ export default {
   ids: { trips: 'trips', teachers: 'schools', parents: 'parents', trust: 'safety', partners: 'partners', complaints: 'complaints' },
 
   nav: [
-    { label: 'Day trips', section: 'trips', filter: 'jednodnevni' },
-    { label: 'Multi-day trips', section: 'trips', filter: 'visednevni' },
+    { label: 'Outdoor school', category: 'skola-u-prirodi' },
+    { label: 'Day trips', category: 'jednodnevni' },
+    { label: 'Study tours', category: 'ekskurzije' },
     { label: 'For schools', page: 'teachers' },
     { label: 'For parents', page: 'parents' },
-    { label: 'Partners', page: 'partners' },
     { label: 'About', page: 'about' },
     { label: 'Contact', contact: true },
   ],
@@ -163,6 +163,23 @@ export default {
     safety: 'Our safety standard',
   },
 
+  people: {
+    eyebrow: 'People',
+    title: 'Who is behind Veliki odmor',
+    text: 'The agency is run by the two founders of Terra Pomalo. We answer the phone ourselves and travel with the programmes we design.',
+    items: [
+      { photo: 'tim-marko', name: 'Marko Obranović', role: 'Co-founder and director', text: 'More than 20 years in tourism. Develops trip programmes and partnerships with hosts, coach operators and accommodation.' },
+      { photo: 'tim-snjezana', name: 'Snježana Cenić Stojaković', role: 'Co-founder and director', text: 'Works on nutrition, everyday habits and stress management, and leads educational and hands-on workshops.' },
+    ],
+    coordinator: '[Trip coordinator: name, photo and phone number]',
+  },
+  testimonials: {
+    eyebrow: 'Experiences',
+    title: 'What schools and parents say',
+    note: 'We publish only genuine statements, with the author’s written consent.',
+    items: [],
+    placeholders: ['[Statement from a class teacher after a trip, with the school’s name and consent]', '[Statement from a parent, with consent]', '[Schools we have travelled with, with their permission]'],
+  },
   partnersTeaser: {
     eyebrow: 'Partners',
     title: 'Hotels, hostels, tourist boards and hosts',

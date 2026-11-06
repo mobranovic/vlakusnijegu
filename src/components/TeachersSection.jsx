@@ -88,7 +88,7 @@ export function TeachersSection() {
   const s = t.teachers;
   const { href } = useRoute();
   return (
-    <section id={t.ids.teachers} className="scroll-mt-20 bg-white py-16 sm:py-20">
+    <section id={t.ids.teachers} className="notebook scroll-mt-20 py-16 sm:py-20">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1.3fr] lg:items-start lg:px-8">
         <div>
           <SectionHeader eyebrow={s.eyebrow} title={s.title}>{s.text}</SectionHeader>
@@ -105,7 +105,7 @@ export function TeachersSection() {
           {s.steps.map((step, i) => {
             const Icon = ICONS[i];
             return (
-              <li key={step.title} className="flex gap-4 rounded-2xl bg-ice-50 p-4 ring-1 ring-brand-100">
+              <li key={step.title} className="flex gap-4 rounded-2xl bg-white p-4 shadow-card ring-1 ring-brand-100">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-700 text-white">
                   <Icon className="h-5 w-5" />
                 </span>

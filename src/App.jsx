@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { CategoryPage } from './components/CategoryPage.jsx';
 import { Footer } from './components/Footer.jsx';
 import { Hero } from './components/Hero.jsx';
-import { ParentsTeaser, PartnersTeaser } from './components/HomeTeasers.jsx';
+import { ParentsTeaser } from './components/HomeTeasers.jsx';
+import { PeopleSection, Testimonials } from './components/PeopleSection.jsx';
 import { InfoPage, NotFound } from './components/InfoPage.jsx';
 import { Navbar } from './components/Navbar.jsx';
 import { TeachersSection } from './components/TeachersSection.jsx';
@@ -51,7 +52,8 @@ function Home() {
       <TeachersSection />
       <ParentsTeaser />
       <TrustSection />
-      <PartnersTeaser />
+      <PeopleSection />
+      <Testimonials />
     </>
   );
 }
@@ -70,6 +72,13 @@ function Page() {
     return cat ? <CategoryPage key={cat.id} category={cat} /> : <NotFound />;
   }
   if (route.page === 'legal') return <InfoPage page={t.legal} />;
+  if (route.page === 'about')
+    return (
+      <>
+        <InfoPage page={t.pages.about} />
+        <PeopleSection />
+      </>
+    );
   if (t.pages[route.page]) return <InfoPage key={route.page} page={t.pages[route.page]} />;
   return <NotFound />;
 }
