@@ -61,11 +61,14 @@ export default {
   ],
 
   hero: {
-    badge: 'Travel agency TERRA POMALO d.o.o. · ID code HR-AB-15-110168155',
-    title: 'Safe and memorable school trips',
-    text: 'Programmes that combine curriculum topics, fun and friendship, for schools from Croatia and abroad. We plan the trip around your pupils’ age and arrival, and stay available around the clock while you travel.',
+    badge: 'Travel agency TERRA POMALO d.o.o., Croatia',
+    title: 'School trips they will remember',
+    text: 'Day trips, study tours and outdoor school in Croatia and Central Europe, linked to the curriculum and backed by a 24/7 coordinator.',
     points: ['Linked to the curriculum', 'Insurance and 24/7 coordinator', 'Free places for teachers'],
-    search: { label: 'Quick trip search', type: 'Type', destination: 'Destination', age: 'Age group', allType: 'All types', allDestination: 'All destinations', allAge: 'All ages', submit: 'Search' },
+    primary: 'See the programmes',
+    secondary: 'Request a proposal',
+    photoAlt: 'Waterfalls of Plitvice Lakes',
+    photoCaption: 'Plitvice Lakes · Lika',
   },
 
   catalogue: {
@@ -80,6 +83,8 @@ export default {
     empty: 'No programmes match these filters.',
     emptyText: 'We will put together a programme for your class – send us an enquiry.',
     view: 'View programme',
+    priceFrom: (eur) => `from €${eur} per pupil`,
+    priceOnRequest: 'Price on request',
     highlights: 'Highlights',
     photo: 'Programme photo placeholder',
   },
@@ -103,12 +108,16 @@ export default {
     copied: 'Link copied',
     inquiryTitle: 'Enquire about this trip',
     inquiryText: 'We reply with a programme proposal for your class and a price per pupil.',
+    stickyCta: 'Send enquiry',
+    shareShort: { print: 'PDF', whatsapp: 'WhatsApp', copy: 'Link' },
     more: 'Other programmes',
     breadcrumb: 'Trips',
   },
 
   teachers: {
     publicCall: false,
+    cta: 'Teacher pack and booking timeline',
+    ctaCall: 'Request a proposal',
     eyebrow: 'For schools',
     title: 'How to book a school trip with us',
     text: 'Schools and agencies from abroad book with us directly. We plan the programme with you from the first enquiry to the trip home.',

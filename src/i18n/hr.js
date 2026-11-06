@@ -62,11 +62,14 @@ export default {
   ],
 
   hero: {
-    badge: 'Turistička agencija TERRA POMALO d.o.o. · ID kod HR-AB-15-110168155',
-    title: 'Sigurna i nezaboravna školska putovanja i izleti',
-    text: 'Programi koji spajaju nastavne sadržaje, zabavu i druženje, pripremljeni u skladu s Pravilnikom o izvođenju izleta, ekskurzija i drugih odgojno-obrazovnih aktivnosti izvan škole Ministarstva znanosti, obrazovanja i mladih.',
+    badge: 'Turistička agencija TERRA POMALO d.o.o.',
+    title: 'Školska putovanja koja se pamte',
+    text: 'Izleti, ekskurzije i škole u prirodi po Hrvatskoj i Europi, povezani s nastavom i uz koordinatora dostupnog 0–24 h.',
     points: ['Povezano s kurikulumom', 'Osiguranje i koordinator 0–24 h', 'Gratis za pratitelje'],
-    search: { label: 'Brza pretraga izleta', type: 'Vrsta', destination: 'Odredište', age: 'Uzrast', allType: 'Sve vrste', allDestination: 'Sva odredišta', allAge: 'Svi uzrasti', submit: 'Pretraži' },
+    primary: 'Pogledajte programe',
+    secondary: 'Zatražite ponudu',
+    photoAlt: 'Slapovi Plitvičkih jezera',
+    photoCaption: 'Plitvička jezera · Lika',
   },
 
   catalogue: {
@@ -81,6 +84,8 @@ export default {
     empty: 'Nema programa za odabrane filtre.',
     emptyText: 'Pripremit ćemo program po mjeri vašeg razreda – pošaljite nam upit.',
     view: 'Pogledaj program',
+    priceFrom: (eur) => `od ${eur} € po učeniku`,
+    priceOnRequest: 'Cijena na upit',
     highlights: 'Istaknuto',
     photo: 'Mjesto za fotografiju programa',
   },
@@ -104,12 +109,16 @@ export default {
     copied: 'Poveznica je kopirana',
     inquiryTitle: 'Pošaljite upit za ovaj izlet',
     inquiryText: 'Odgovaramo s prijedlogom programa za vaš razred i cijenom po učeniku.',
+    stickyCta: 'Pošalji upit',
+    shareShort: { print: 'PDF', whatsapp: 'WhatsApp', copy: 'Poveznica' },
     more: 'Drugi programi',
     breadcrumb: 'Izleti',
   },
 
   teachers: {
     publicCall: true,
+    cta: 'Kako naručiti, paket i kalendar',
+    ctaCall: 'Pošaljite javni poziv',
     eyebrow: 'Za nastavnike',
     title: 'Kako naručiti izlet ili ekskurziju',
     text: 'Pratimo vas kroz postupak propisan Pravilnikom o izvođenju izleta, ekskurzija i drugih odgojno-obrazovnih aktivnosti izvan škole, od planiranja do izvješća.',

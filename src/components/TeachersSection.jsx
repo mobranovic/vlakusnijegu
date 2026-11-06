@@ -4,7 +4,7 @@ import { useRoute } from '../route.jsx';
 import { toLines, useForm } from '../lib/useForm.js';
 import { makeRules } from '../lib/validation.js';
 import { submitForm } from '../mailto.js';
-import { ConsentLabel, InquiryForm, SentMessage } from './InquiryForm.jsx';
+import { ConsentLabel, SentMessage } from './InquiryForm.jsx';
 import { Button } from './ui/Button.jsx';
 import { Checkbox, Field } from './ui/Field.jsx';
 import { Honeypot } from './ui/Honeypot.jsx';
@@ -82,45 +82,41 @@ export function PublicCallForm() {
   );
 }
 
+// Na početnoj: sažeti postupak i gumbi; obrazac za javni poziv, paket i kalendar su na stranici Za nastavnike
 export function TeachersSection() {
   const t = useT();
   const s = t.teachers;
   const { href } = useRoute();
   return (
-    <section id={t.ids.teachers} className="scroll-mt-20 bg-white py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader eyebrow={s.eyebrow} title={s.title}>{s.text}</SectionHeader>
-
-        <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <section id={t.ids.teachers} className="scroll-mt-20 bg-white py-16 sm:py-20">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1.3fr] lg:items-start lg:px-8">
+        <div>
+          <SectionHeader eyebrow={s.eyebrow} title={s.title}>{s.text}</SectionHeader>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button as="a" href={href('teachers')} variant="brand" size="lg" className="whitespace-nowrap">
+              {s.cta} <ArrowRight className="h-5 w-5" />
+            </Button>
+            <Button as="a" href={`${href('teachers')}#obrazac`} variant="outline" size="lg" className="whitespace-nowrap">
+              {s.ctaCall}
+            </Button>
+          </div>
+        </div>
+        <ol className="grid gap-3 sm:grid-cols-2">
           {s.steps.map((step, i) => {
             const Icon = ICONS[i];
             return (
-              <li key={step.title} className="relative rounded-3xl bg-ice-50 p-6 ring-1 ring-brand-100">
-                <span className="absolute right-5 top-5 font-display text-4xl font-bold text-brand-100" aria-hidden>{i + 1}</span>
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-700 text-white">
+              <li key={step.title} className="flex gap-4 rounded-2xl bg-ice-50 p-4 ring-1 ring-brand-100">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-700 text-white">
                   <Icon className="h-5 w-5" />
                 </span>
-                <h3 className="mt-4 font-semibold text-brand-900">{step.title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{step.text}</p>
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-brand-900"><span className="mr-1.5 text-amber-600">{i + 1}.</span>{step.title}</h3>
+                  <p className="mt-1 text-sm text-slate-600">{step.text}</p>
+                </div>
               </li>
             );
           })}
         </ol>
-        <p className="mt-5 max-w-3xl text-sm text-slate-500">{s.note}</p>
-        <a href={href('teachers')} className="mt-4 inline-flex items-center gap-2 font-semibold text-brand-700 hover:text-brand-600">
-          {s.more} <ArrowRight className="h-4 w-4" />
-        </a>
-
-        <div className="mt-12 grid gap-8 rounded-3xl bg-ice-100 p-5 sm:p-8 lg:grid-cols-[1fr_1.6fr] lg:p-10">
-          <div>
-            <h3 className="font-display text-2xl font-bold text-brand-900">{s.formTitle}</h3>
-            <p className="mt-3 text-slate-600">{s.formText}</p>
-            <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-slate-700">
-              {s.bullets.map((b) => <li key={b}>{b}</li>)}
-            </ul>
-          </div>
-          <div className="min-w-0 rounded-2xl bg-white p-5 shadow-card sm:p-6">{s.publicCall ? <PublicCallForm /> : <InquiryForm />}</div>
-        </div>
       </div>
     </section>
   );

@@ -46,12 +46,7 @@ function Home() {
 
   return (
     <>
-      <Hero
-        onSearch={(q) => {
-          setFilters(q);
-          scrollToId(t.ids.trips, true);
-        }}
-      />
+      <Hero />
       <TripCatalogue filters={filters} setFilters={setFilters} onCustom={openOffer} />
       <TeachersSection />
       <ParentsTeaser />
