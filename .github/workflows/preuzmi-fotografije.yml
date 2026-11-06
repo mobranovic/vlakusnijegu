@@ -1,11 +1,11 @@
-# Ručno: preuzima fotografije s Unsplasha (id-ovi u ulazu), smanjuje ih na 1600 px i sprema s podacima o autoru
-# na granu fotografije-kandidati (za odabir; u stranicu se prebacuju tek odabrane).
-name: Preuzmi fotografije (Unsplash)
+# Ručno: preuzima fotografije s Wikimedia Commonsa (nazivi datoteka odvojeni s |) u širini 1600 px, s podacima o
+# autoru i licenci, na granu fotografije-kandidati (za odabir; u stranicu se prebacuju tek odabrane).
+name: Preuzmi fotografije (Wikimedia Commons)
 on:
   workflow_dispatch:
     inputs:
-      ids:
-        description: 'Unsplash id-ovi, odvojeni razmakom'
+      files:
+        description: 'Nazivi datoteka na Commonsu (bez File:), odvojeni s |'
         required: true
 permissions:
   contents: write
@@ -16,14 +16,28 @@ jobs:
       - uses: actions/checkout@v4
       - name: Preuzmi
         env:
-          IDS: ${{ inputs.ids }}
+          FILES: ${{ inputs.files }}
         run: |
           mkdir -p kandidati
-          for id in $IDS; do
-            curl -sSL "https://unsplash.com/photos/$id/download?force=true" -o "kandidati/$id-orig.jpg" || continue
-            convert "kandidati/$id-orig.jpg" -resize '1600x1600>' -quality 84 "kandidati/$id.jpg" && rm "kandidati/$id-orig.jpg"
-            curl -sSL "https://unsplash.com/photos/$id" | grep -oE '<title>[^<]*</title>|"og:title" content="[^"]*"|"twitter:creator" content="[^"]*"' | head -3 > "kandidati/$id.txt" || true
-          done
+          python3 - <<'PY'
+          import json, os, re, urllib.parse, urllib.request
+          UA = {'User-Agent': 'VelikiOdmorWeb/1.0 (photo selection for a school travel website)'}
+          for i, name in enumerate([f.strip() for f in os.environ['FILES'].split('|') if f.strip()], 1):
+              title = 'File:' + name
+              api = 'https://commons.wikimedia.org/w/api.php?' + urllib.parse.urlencode({
+                  'action': 'query', 'titles': title, 'prop': 'imageinfo', 'iiprop': 'url|extmetadata', 'iiurlwidth': 1600, 'format': 'json'})
+              data = json.load(urllib.request.urlopen(urllib.request.Request(api, headers=UA)))
+              page = next(iter(data['query']['pages'].values()))
+              if 'imageinfo' not in page:
+                  print('nema', name); continue
+              info = page['imageinfo'][0]
+              meta = {k: re.sub('<[^>]+>', '', v.get('value', '')) for k, v in info['extmetadata'].items() if k in ('Artist', 'LicenseShortName', 'LicenseUrl', 'ImageDescription')}
+              meta.update(file=name, page=info['descriptionurl'])
+              img = urllib.request.urlopen(urllib.request.Request(info['thumburl'], headers=UA)).read()
+              open(f'kandidati/{i}.jpg', 'wb').write(img)
+              json.dump(meta, open(f'kandidati/{i}.json', 'w'), ensure_ascii=False, indent=1)
+              print(i, name, len(img), meta.get('Artist'), meta.get('LicenseShortName'))
+          PY
           ls -la kandidati
       - name: Spremi na granu fotografije-kandidati
         run: |
