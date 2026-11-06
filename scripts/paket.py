@@ -194,7 +194,7 @@ def sazetak(data, t, folder):
     h2(doc, 'Cijena uključuje')
     bullets(doc, t['included'])
     h2(doc, 'Cijena i plaćanje')
-    doc.add_paragraph('[… € po učeniku] za [broj] učenika. Plaćanje jednokratno, karticama ili u ratama: [plan rata].')
+    doc.add_paragraph('[… € po učeniku] za [broj] učenika. Plaćanje jednokratno ili u ratama, uplatom na račun: [plan rata].')
     doc.add_paragraph('Osiguranje od nesretnog slučaja uključeno je u cijenu; osiguranje od otkaza putovanja je izborno.')
     h2(doc, 'Kontakt')
     doc.add_paragraph(f"Koordinator tijekom putovanja (0–24 h): {data['phones'][0]} · {data['emails'][0]}")
@@ -251,7 +251,7 @@ def prezentacija(data, t, folder):
         'Osiguranje od nesretnog slučaja u cijeni',
         f"Koordinator 0–24 h: {data['phones'][0]}",
     ])
-    slide('Cijena i plaćanje', ['[… € po učeniku] za [broj] učenika', 'Plaćanje jednokratno, karticama ili u ratama: [plan rata]', 'Gratis za pratitelje prema ugovoru sa školom', 'Osiguranje od otkaza putovanja je izborno'])
+    slide('Cijena i plaćanje', ['[… € po učeniku] za [broj] učenika', 'Plaćanje jednokratno ili u ratama, uplatom na račun: [plan rata]', 'Gratis za pratitelje prema ugovoru sa školom', 'Osiguranje od otkaza putovanja je izborno'])
     slide('Pitanja?', [f"{data['emails'][0]} · {data['phones'][0]}", 'Odgovore za roditelje i Opće uvjete pogledajte na našoj stranici [adresa stranice]'])
     prs.save(folder / '3-prezentacija-roditeljski-sastanak.pptx')
 

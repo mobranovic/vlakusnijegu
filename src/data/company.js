@@ -4,8 +4,9 @@ export const BRAND = 'Veliki odmor';
 
 // Adresa stranice (bez kose crte na kraju) za canonical, hreflang, Open Graph i sitemap. [Potvrditi domenu]
 export const SITE_URL = 'https://www.velikiodmor.hr';
-// Poslužitelj za obrasce (npr. mailer s terrapomalo.hr); prazno = obrazac otvara pripremljenu poruku u programu za e-poštu.
-export const FORM_ENDPOINT = '';
+// Poslužitelj za obrasce: isti mailer kao na terrapomalo.hr (nginx prosljeđuje /api/upit, docs/objava.md).
+// Ako ne odgovori, obrazac otvara pripremljenu poruku u programu za e-poštu, pa se upit ne gubi.
+export const FORM_ENDPOINT = '/api/upit';
 export const TERRA_POMALO_URL = 'https://www.terrapomalo.hr';
 
 export const OWNER = {
@@ -23,6 +24,10 @@ export const OWNER = {
   swift: 'ZABAHR2X',
   idCode: 'HR-AB-15-110168155',
 };
+// Jamstvo za slučaj nesolventnosti (vrijedi 5. 11. 2026. – 5. 11. 2027.) i osiguranje od odgovornosti, kao na terrapomalo.hr
+export const TRUST = { insurer: 'Croatia osiguranje d.d.', guarantee: '381290000202', liability: '554291008071' };
+export const VAT_ID = 'HR52072209280'; // u sustavu PDV-a, posebni postupak oporezivanja putničkih agencija
+
 export const ADDRESS = `${OWNER.street}, ${OWNER.city}`;
 export const MAP_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('Nova ulica 17, Žaborić, 22000 Šibenik')}`;
 

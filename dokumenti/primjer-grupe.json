@@ -12,10 +12,12 @@
   "rok_ostatka": null,
   "osiguranje_otkaza": null,
   "uvjeti_osiguranja": null,
-  "jamstvo": null,
-  "osiguranje_odgovornosti": null,
-  "kartice": null,
   "radno_vrijeme": null,
   "datum_ponude": null,
-  "ucenici": ["[Učenik 1]", "[Učenik 2]", "[Učenik 3]"]
+  "ucenici": [
+    "[Učenik 1]",
+    "[Učenik 2]",
+    "[Učenik 3]"
+  ],
+  "rate": null
 }

@@ -169,12 +169,12 @@ def ponuda(data, g, trip, out):
     hr_.bold = True
     hr_.font.size = Pt(14)
     hr_.font.color.rgb = BLUE
-    doc.add_paragraph(f"Cijena je fiksna za najmanje {val(g.get('min_ucenika'))} učenika koji plate puni iznos (plaćena mjesta).")
+    doc.add_paragraph(f"Cijena uključuje PDV (posebni postupak za putničke agencije) i fiksna je za najmanje {val(g.get('min_ucenika'))} učenika koji plate puni iznos (plaćena mjesta).")
 
     h2(doc, 'Cijena uključuje')
     bullets(doc, trip['included'] + [
-        f"Jamstvo za slučaj nesolventnosti: {g.get('jamstvo') or '[osiguravatelj ili banka, broj police ili jamstva]'}",
-        f"Osiguranje od odgovornosti: {g.get('osiguranje_odgovornosti') or '[osiguravatelj, broj police]'}",
+        f"Jamstvo za slučaj nesolventnosti: {data['trust']['insurer']}, polica br. {data['trust']['guarantee']}",
+        f"Osiguranje od odgovornosti: {data['trust']['insurer']}, polica br. {data['trust']['liability']}",
         'Troškove pedagoške pratnje prema ugovoru sa školom te troškove organizacije i izdavanja ponude',
     ])
 
@@ -187,7 +187,7 @@ def ponuda(data, g, trip, out):
     h2(doc, 'Načini plaćanja')
     bullets(doc, [
         f"Uplatom na račun {data['owner']['name']}, IBAN {data['owner']['iban']}, model HR00, poziv na broj iz osobnog pisma (barkod u pismu za mobilno bankarstvo)",
-        f"Karticama, jednokratno ili u ratama: {g.get('kartice') or '[kartice i broj rata]'}",
+        f"Jednokratno ili u ratama, uplatama na isti račun s istim pozivom na broj: {g.get('rate') or '[broj rata i rokovi]'}",
     ])
 
     h2(doc, 'Dodatni program')

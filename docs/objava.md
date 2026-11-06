@@ -18,8 +18,8 @@ server {
 }
 ```
 
-4. Obrasci: dok je `FORM_ENDPOINT` prazan, obrazac otvara pripremljenu poruku u programu za e-poštu (adrese iz
-   `EMAILS`). Za izravno slanje može se koristiti isti mailer kao na terrapomalo.hr (`server/mailer.py` u tom
-   repozitoriju) i upisati njegovu adresu u `FORM_ENDPOINT`.
+4. Obrasci šalju na `FORM_ENDPOINT` = `/api/upit`, isti mailer kao na terrapomalo.hr (`server/mailer.py` u tom
+   repozitoriju). U nginx bloku ove domene dodati isti `location /api/upit { proxy_pass … }` kao za terrapomalo.hr.
+   Dok mailer ne odgovara, obrazac otvara pripremljenu poruku u programu za e-poštu (adrese iz `EMAILS`).
 5. Nakon objave: Google Search Console (dodati domenu, poslati `sitemap.xml`), provjera dijeljenja na
    https://developers.facebook.com/tools/debug/ i https://search.google.com/test/rich-results.
