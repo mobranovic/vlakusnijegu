@@ -1,0 +1,35 @@
+# Ručno: preuzima fotografije s Unsplasha (id-ovi u ulazu), smanjuje ih na 1600 px i sprema s podacima o autoru
+# na granu fotografije-kandidati (za odabir; u stranicu se prebacuju tek odabrane).
+name: Preuzmi fotografije (Unsplash)
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: 'Unsplash id-ovi, odvojeni razmakom'
+        required: true
+permissions:
+  contents: write
+jobs:
+  preuzmi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preuzmi
+        env:
+          IDS: ${{ inputs.ids }}
+        run: |
+          mkdir -p kandidati
+          for id in $IDS; do
+            curl -sSL "https://unsplash.com/photos/$id/download?force=true" -o "kandidati/$id-orig.jpg" || continue
+            convert "kandidati/$id-orig.jpg" -resize '1600x1600>' -quality 84 "kandidati/$id.jpg" && rm "kandidati/$id-orig.jpg"
+            curl -sSL "https://unsplash.com/photos/$id" | grep -oE '<title>[^<]*</title>|"og:title" content="[^"]*"|"twitter:creator" content="[^"]*"' | head -3 > "kandidati/$id.txt" || true
+          done
+          ls -la kandidati
+      - name: Spremi na granu fotografije-kandidati
+        run: |
+          git config user.name "preuzimanje-fotografija"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -B fotografije-kandidati
+          git add kandidati
+          git commit -m "Kandidati fotografija: $(date -u +%Y-%m-%d)"
+          git push -f origin fotografije-kandidati
