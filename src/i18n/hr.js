@@ -62,7 +62,6 @@ export default {
   ],
 
   hero: {
-    badge: 'Turistička agencija TERRA POMALO d.o.o.',
     title: 'Školska putovanja koja se pamte',
     text: 'Izleti, ekskurzije i škole u prirodi po Hrvatskoj i Europi, povezani s nastavom i uz koordinatora dostupnog 0–24 h.',
     points: ['Povezano s kurikulumom', 'Osiguranje i koordinator 0–24 h', 'Gratis za pratitelje'],

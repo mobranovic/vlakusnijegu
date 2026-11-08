@@ -61,7 +61,6 @@ export default {
   ],
 
   hero: {
-    badge: 'Travel agency TERRA POMALO d.o.o., Croatia',
     title: 'School trips they will remember',
     text: 'Day trips, study tours and outdoor school in Croatia and Central Europe, linked to the curriculum and backed by a 24/7 coordinator.',
     points: ['Linked to the curriculum', 'Insurance and 24/7 coordinator', 'Free places for teachers'],
