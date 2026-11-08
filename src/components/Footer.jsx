@@ -1,5 +1,5 @@
 import { CATEGORIES } from '../data/categories.js';
-import { ADDRESS, EMAILS, MAP_URL, PHONES, SOCIAL, TERRA_POMALO_URL } from '../data/company.js';
+import { ADDRESS, EMAILS, MAP_URL, OWNER, PHONES, SOCIAL, TERRA_POMALO_URL } from '../data/company.js';
 import { useT } from '../i18n/index.jsx';
 import { useRoute } from '../route.jsx';
 import { Logo } from './Logo.jsx';
@@ -110,6 +110,7 @@ export function Footer() {
               </span>
             ))}
           </p>
+          <p>{f.directors}: {OWNER.board}</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             {f.legalLinks.map((l) => <a key={l.page} href={href(l.page)} className="link-line">{l.label}</a>)}
             <a href={legalAnchor(t.ids.complaints)} className="link-line">{f.complaints}</a>

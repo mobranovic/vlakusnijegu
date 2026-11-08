@@ -165,16 +165,6 @@ export default {
     safety: 'Naš sigurnosni standard',
   },
 
-  people: {
-    eyebrow: 'Ljudi',
-    title: 'Tko stoji iza Velikog odmora',
-    text: 'Agenciju vode dvoje osnivača Terra Pomalo. Javljamo se na telefon i putujemo s programima koje sami slažemo.',
-    items: [
-      { photo: 'tim-marko', name: 'Marko Obranović', role: 'Suosnivač i direktor', text: 'Više od 20 godina iskustva u turizmu. Razvija programe putovanja i suradnje s domaćinima, prijevoznicima i smještajem.' },
-      { photo: 'tim-snjezana', name: 'Snježana Cenić Stojaković', role: 'Suosnivačica i direktorica', text: 'Bavi se prehranom, svakodnevnim navikama i upravljanjem stresom te vodi edukacije i iskustvene radionice.' },
-    ],
-    coordinator: '[Koordinator na putovanjima: ime, fotografija i broj telefona]',
-  },
   testimonials: {
     eyebrow: 'Iskustva',
     title: 'Što kažu škole i roditelji',
@@ -302,6 +292,7 @@ export default {
     newTab: 'otvara se u novoj kartici',
     // Donja traka: pravni minimum na svakoj stranici (tvrtka s oznakom „turistička agencija“, sjedište, OIB, ID kod), kao na terrapomalo.hr
     legalLine: 'Veliki odmor · TERRA POMALO d.o.o., turistička agencija · Šibenik · OIB 52072209280 · ID kod HR-AB-15-110168155',
+    directors: 'Direktori',
     complaints: 'Prigovori',
     credits: 'Autori fotografija',
     social: 'Pratite nas',

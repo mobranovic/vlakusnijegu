@@ -164,16 +164,6 @@ export default {
     safety: 'Our safety standard',
   },
 
-  people: {
-    eyebrow: 'People',
-    title: 'Who is behind Veliki odmor',
-    text: 'The agency is run by the two founders of Terra Pomalo. We answer the phone ourselves and travel with the programmes we design.',
-    items: [
-      { photo: 'tim-marko', name: 'Marko Obranović', role: 'Co-founder and director', text: 'More than 20 years in tourism. Develops trip programmes and partnerships with hosts, coach operators and accommodation.' },
-      { photo: 'tim-snjezana', name: 'Snježana Cenić Stojaković', role: 'Co-founder and director', text: 'Works on nutrition, everyday habits and stress management, and leads educational and hands-on workshops.' },
-    ],
-    coordinator: '[Trip coordinator: name, photo and phone number]',
-  },
   testimonials: {
     eyebrow: 'Experiences',
     title: 'What schools and parents say',
@@ -298,6 +288,7 @@ export default {
     map: 'map',
     newTab: 'opens in a new tab',
     legalLine: 'Veliki odmor · TERRA POMALO d.o.o., travel agency · Šibenik, Croatia · OIB 52072209280 · ID code HR-AB-15-110168155',
+    directors: 'Directors',
     complaints: 'Complaints',
     credits: 'Photo credits',
     social: 'Follow us',
