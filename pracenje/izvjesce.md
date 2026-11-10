@@ -1,17 +1,26 @@
 # Javni pozivi škola – novo od prošle provjere
 
-Provjereno 09. 11. 2026. u 06:17 UTC · škola: 30 · razdoblje: zadnjih 45 dana · novih dokumenata: 2
+Provjereno 10. 11. 2026. u 13:27 UTC · škola: 30 · razdoblje: zadnjih 45 dana · novih dokumenata: 4
 
-## Novi javni pozivi – pripremiti ponudu (2)
+## Novi javni pozivi – pripremiti ponudu (1)
 
 | Datum | Škola | Vrsta | Dokument |
 | --- | --- | --- | --- |
-| 2026-11-06 | os-braca-radic-koprivnica.skole.hr | – | [Javni_poziv_ br. 26_2026_Šibenik_NPKrka_6.c_6d](https://os-braca-radic-koprivnica.skole.hr/wp-content/uploads/sites/1585/2026/11/Javni_poziv_-br.-26_2026_Sibenik_NPKrka_6.c_6d.docx) |
-| 2026-11-05 | gimnazija-vnazora-zd.skole.hr | – | [Javni poziv: Gardaland](https://gimnazija-vnazora-zd.skole.hr/javni-poziv-gardaland-3/) |
+| 2026-11-09 | os-braca-radic-koprivnica.skole.hr | – | [Javni poziv br. 27_2026_ 7.c i 7.e Južna Dalmacija-ponovljeni poziv](https://os-braca-radic-koprivnica.skole.hr/wp-content/uploads/sites/1585/2026/11/Javni-poziv-br.-27_2026_-7.c-i-7.e-Juzna-Dalmacija-ponovljeni-poziv-.docx) |
 
-## Nedostupne stranice (4)
+## Pozivi na predstavljanje i zapisnici (1)
 
-- os-amohorovicica-matulji.skole.hr: HTTP Error 500: Internal Server Error
-- os-iperkovca-senkovec.skole.hr: HTTP Error 500: Internal Server Error
-- ss-treca-ekonomska-zg.skole.hr: HTTP Error 500: Internal Server Error
-- ss-medicinska-akuzmanic-zd.skole.hr: HTTP Error 500: Internal Server Error
+| Datum | Škola | Vrsta | Dokument |
+| --- | --- | --- | --- |
+| 2026-11-09 | os-ljmodeca-kc.skole.hr | skola u prirodi | [Zapisnik s otvaranja ponuda za organizaciju višednevne izvanučioničke nastave- Škola u prirodi ( 3. a OŠ Ljudevita Modeca, i 3.- 4. r. PŠ Veliki Raven, OŠ Ljudevita Modeca Križevci](https://os-ljmodeca-kc.skole.hr/wp-content/uploads/sites/1976/2026/11/Zapisnik-s-otvaranja-ponuda-za-organizaciju-visednevne-izvanucionicke-nastave-Skola-u-prirodi-3.-a-OS-Ljudevita-Modeca-i-3.-4.-r.-PS-Veliki-Raven-OS-Ljudevita-Modeca-Krizevci.pdf) |
+
+## Odluke o odabiru – cijene i konkurencija (2)
+
+| Datum | Škola | Vrsta | Dokument |
+| --- | --- | --- | --- |
+| 2026-11-10 | os-iperkovca-senkovec.skole.hr | – | [Obavijest o odabiru ponuda i poziv na predstavljanje- javni poziv br. 1-2026](https://os-iperkovca-senkovec.skole.hr/wp-content/uploads/sites/2559/2026/11/Obavijest-o-odabiru-ponuda-i-poziv-na-predstavljanje-javni-poziv-br.-1-2026.pdf) |
+| 2026-11-10 | os-iperkovca-senkovec.skole.hr | – | [Obavijest o odabiru ponuda i poziv na predstavljanje- javni poziv br. 1/2026](https://os-iperkovca-senkovec.skole.hr/obavijest-o-odabiru-ponuda-i-poziv-na-predstavljanje-javni-poziv-br-1-2026/) |
+
+## Nedostupne stranice (1)
+
+- os-dugopolje.skole.hr: HTTP Error 500: Internal Server Error
