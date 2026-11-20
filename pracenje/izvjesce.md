@@ -1,15 +1,21 @@
 # Javni pozivi škola – novo od prošle provjere
 
-Provjereno 19. 11. 2026. u 14:25 UTC · škola: 30 · razdoblje: zadnjih 45 dana · novih dokumenata: 2
+Provjereno 20. 11. 2026. u 13:59 UTC · škola: 30 · razdoblje: zadnjih 45 dana · novih dokumenata: 2
 
-## Odluke o odabiru – cijene i konkurencija (2)
+## Novi javni pozivi – pripremiti ponudu (1)
 
 | Datum | Škola | Vrsta | Dokument |
 | --- | --- | --- | --- |
-| 2026-11-18 | ss-treca-ekonomska-zg.skole.hr | – | [Odluka- odabir javni poziv I.- 2026-2027. _Budimpešta](https://ss-treca-ekonomska-zg.skole.hr/wp-content/uploads/sites/1849/2026/11/Odluka-odabir-javni-poziv-I.-2026-2027.-_Budimpesta.doc) |
-| 2026-11-17 | ss-treca-ekonomska-zg.skole.hr | – | [Odluka o odabiru_Javni poziv-I.-2026./2027](https://ss-treca-ekonomska-zg.skole.hr/odluka-o-odabiru_javni-poziv-i-2026-2027/) |
+| 2026-11-20 | os-braca-radic-koprivnica.skole.hr | – | [Javni poziv br. 28_2026_ Euromath u Grazu _ poziv](https://os-braca-radic-koprivnica.skole.hr/wp-content/uploads/sites/1585/2026/11/Javni-poziv-br.-28_2026_-Euromath-u-Grazu-_-poziv.docx) |
 
-## Nedostupne stranice (2)
+## Ostalo o putovanjima (1)
 
-- os-ostrog-kastelluksic.skole.hr: HTTP Error 500: Internal Server Error
-- os-iperkovca-senkovec.skole.hr: HTTP Error 500: Internal Server Error
+| Datum | Škola | Vrsta | Dokument |
+| --- | --- | --- | --- |
+| 2026-11-20 | os-mejasi-st.skole.hr | ekskurzija | [Pravilnik-o-izvodenju-izleta-ekskurzija (2)](https://os-mejasi-st.skole.hr/wp-content/uploads/sites/2282/2026/11/Pravilnik-o-izvodenju-izleta-ekskurzija-2.pdf) |
+
+## Nedostupne stranice (3)
+
+- ss-treca-ekonomska-zg.skole.hr: HTTP Error 500: Internal Server Error
+- ss-tehnicka-zd.skole.hr: HTTP Error 500: Internal Server Error
+- ss-ekonomska-si.skole.hr: HTTP Error 500: Internal Server Error
